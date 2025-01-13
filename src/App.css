@@ -1,0 +1,29 @@
+@font-face {
+  font-family: 'Cocogoose-Classic-Medium';
+  src: url('./assets/fonts/Cocogoose-Classic-Medium-trial.ttf') format('truetype');
+  font-weight: 400; 
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cocogoose-Classic-ExtraBold';
+  src: url('./assets/fonts/Cocogoose-Classic-ExtraBold-trial.ttf') format('truetype');
+  font-weight: 800;  
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ImpactCustom';
+  src: url('./assets/fonts/impact.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+.font-medium-ccm{
+  font-family: 'Cocogoose-Classic-Medium', sans-serif;
+}
+.font-impact-regular{
+  font-family: 'ImpactCustom', sans-serif;
+}
+.font-ebold-ccm{
+  font-family: 'Cocogoose-Classic-ExtraBold', sans-serif;
+}
