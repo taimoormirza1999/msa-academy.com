@@ -1,5 +1,6 @@
 import React from 'react';
 import BannerImage from '../assets/bannerbg.png';
+import Button from './utils/Button';
 
 const Banner = () => {
   return (
@@ -10,9 +11,10 @@ const Banner = () => {
       className="w-full h-auto object-contain"
     />
     <div className="absolute top-28 right-16 z-30" style={{top: 'calc(100% - 35%)'}}>
-      <button className="bg-red text-white py-2 text-lg font-medium-ccmpx-6 px-8 rounded-lg shadow-lg hover:bg-blue-700 transition duration-300">
+      {/* <button className="bg-red text-white py-2 text-lg font-medium-ccmpx-6 px-8 rounded-lg shadow-lg hover:bg-blue-700 transition duration-300">
         ENROLL NOW!
-      </button>
+      </button> */}
+      <Button/>
     </div>
   </div>
   );

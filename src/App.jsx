@@ -5,7 +5,7 @@ import './App.css'
 import Checkout from './components/Checkout'
 import Navigation from './components/Navigation'
 import BackgroundImage from './assets/Background.png';
-import Banner from './components/Banner'
+import Banner from './components/Banner.jsx'
 import EnrollmentBanner from './components/EnrollmentBanner'
 import YourPath from './components/YourPath'
 import Animation from './components/Animation'

@@ -1,7 +1,7 @@
 import React from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 
-const stripePromise = loadStripe('pk_test_51OnhTkLaKTIuF5B7cKZ8OgO1G1ZgvjAb9jCvxYY9URC6qAc8FqSAN4yQ2c0N2iPXVjr6UbkCtdZ7u3v0WMckGY3200gFW6JKRA');
+const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
 
 const Checkout = () => {
   const handleCheckout = async (packageDetails) => {
@@ -10,8 +10,8 @@ const Checkout = () => {
         description: packageDetails.description,
         priceAmount: packageDetails.price,
       };
-    const response = await fetch('http://localhost:5002/create-checkout-session', {
-      method: 'POST',
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_API}create-checkout-session`, {
+        method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
