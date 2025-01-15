@@ -19,7 +19,7 @@ function FAQ() {
   ];
 
   return (
-    <div className="p-3 py-10 pb-14 my-0 md:my-10">
+    <div className="p-3 py-10 pb-14 my-0 md:my-10 max-w-[1920px]">
       {/* Section Heading */}
       <div className="text-center mb-6 md:mb-12">
         <img

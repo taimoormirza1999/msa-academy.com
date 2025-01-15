@@ -15,7 +15,7 @@ export default {
         gray636: '#636363',
       },
       backgroundImage: {
-        'custom-gradient': 'linear-gradient(to right, #7f7fff, #ff00ff)', // Custom gradient
+        'custom-gradient': 'linear-gradient(to right, #7f7fff, #ff00ff)',
       },
       width: {
         '99': '99%',
@@ -25,6 +25,9 @@ export default {
         '90': '90%',
         '85': '85%',
         '80': '80%',
+        '60': '60%',
+        '60vw': '60vw',
+        '70vw': '70vw',
         '80vw': '80vw',
         '90vw': '90vw'
       },
@@ -36,6 +39,8 @@ export default {
         '90': '90%',
         '85': '85%',
         '80': '80%',
+        '20vw': '20vw',
+        '30vw': '30vw',
         '40vw': '40vw',
         '70vw': '70vw',
         '80vw': '80vw',

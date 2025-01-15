@@ -4,7 +4,7 @@ import CommunityMapImage from '../assets/community_map.png'; // Replace with you
 const CommunityMap = () => {
   return (
     <div
-      className="relative w-full h-auto bg-cover bg-center mt-8 mb-8 md:mt-18 md:mb-0"
+      className="relative w-full h-auto bg-cover bg-center mt-8 mb-8 md:mt-18 md:mb-0 2xl:w-85 mx-auto max-w-[1920px]"
      
     >
          <div className="relative h-auto mx-auto  w-full md:w-85 " >

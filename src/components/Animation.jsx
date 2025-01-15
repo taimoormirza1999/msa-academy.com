@@ -6,7 +6,7 @@ import Button from './utils/Button';
 const Animation = () => {
   return (
     <div
-      className="relative w-full h-auto bg-cover bg-center -mt-10 md:-mt-36"
+      className="relative w-full h-auto bg-cover bg-center -mt-10 md:-mt-36 2xl:-mt-56 2xl:w-85 mx-auto max-w-[1920px]"
      id='animation-course'
     >
          <div className="relative h-auto w-99 md:w-97" >

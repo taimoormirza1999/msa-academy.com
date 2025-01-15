@@ -17,7 +17,7 @@ const VideoSection = ({videoUrl, imageUrl}) => {
   return (
     <div>
       <div
-        className="relative bg-[#bdbdbd] h-52 md:h-48 flex justify-center items-center text-center rounded-2xl cursor-pointer"
+        className="relative h-52 md:h-48 flex justify-center items-center text-center rounded-2xl cursor-pointer"
         onClick={() => handleVideoClick()}
       >
         <img
@@ -40,12 +40,11 @@ const VideoSection = ({videoUrl, imageUrl}) => {
               X
             </button>
             <iframe
-              className=" h-72 rounded bg-black w-80vw md:w-80vw md:h-40vw" 
+              className=" h-72 rounded bg-black w-80vw md:w-80vw 2xl:w-60vw md:h-40vw 2xl:h-30vw" 
               src={videoUrl}
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
-              // style={{height:'50vh'}}
               title="YouTube video"
             ></iframe>
           </div>

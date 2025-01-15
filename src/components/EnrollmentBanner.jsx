@@ -30,7 +30,7 @@ const EnrollmentBanner = () => {
 
   return (
     <div id='enrollment' className="bg-black text-white text-center py-8 md:py-5 ">
-      <div className='flex flex-col md:flex-row justify-center items-center'>
+      <div className='flex flex-col lg:flex-row justify-center items-center'>
       <h1 className="text-3xl md:text-4xl mb-3 md:mb-0 font-impact-regular">ENROLLMENT ENDS IN</h1>
       <div className="text-3xl md:text-4xl mb-0 md:mb-0  ml-2 font-impact-regular">
         <span className='shadow-xl shadow-pink200/35'>{timeLeft.days} Days </span>
