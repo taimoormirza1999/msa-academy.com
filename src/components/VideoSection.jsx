@@ -40,12 +40,12 @@ const VideoSection = ({videoUrl, imageUrl}) => {
               X
             </button>
             <iframe
-              className="w-full h-72 rounded bg-black" 
+              className=" h-72 rounded bg-black w-80vw md:w-80vw md:h-40vw" 
               src={videoUrl}
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
-              style={{height:'50vh',width:'90vh'}}
+              // style={{height:'50vh'}}
               title="YouTube video"
             ></iframe>
           </div>
