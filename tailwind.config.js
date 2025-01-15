@@ -50,11 +50,18 @@ export default {
         '80vw': '80vw',
         '90vw': '90vw'
       },
+      keyframes: {
+        glow: {
+          '0%, 100%': { boxShadow: '0 0 10px 2px rgba(240, 45, 0, 0.6)' }, // Matches 'red' color
+          '50%': { boxShadow: '0 0 20px 4px rgba(240, 45, 0, 1)' },
+        },
+      },
       borderRadius: {
         'primary': '1.8rem', 
       },
       animation: {
         'spin-fast': 'spin 0.8s linear infinite',
+        'animate-glow': 'glow 1.5s infinite ease-in-out',
       },
       borderWidth: {
         '3': '3px',

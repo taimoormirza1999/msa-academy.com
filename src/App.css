@@ -18,6 +18,20 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'KozGoPr6NRegular';
+  src: url('./assets/fonts/KozGoPr6NRegular.woff') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+body{
+  font-family: 'Cocogoose-Classic-Medium', sans-serif;
+  font-weight: 200; 
+}
+.font-medium-kgpr{
+  font-family: 'KozGoPr6NRegular', sans-serif;
+  font-weight: 700;
+}
 .font-medium-ccm{
   font-family: 'Cocogoose-Classic-Medium', sans-serif;
 }

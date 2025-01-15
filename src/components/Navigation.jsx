@@ -16,7 +16,7 @@ const Navigation = () => {
         {/* Logo */}
         <img 
           src={logo} 
-          className="w-32 h-auto px-3 md:border-r-3 border-gray636 shadow-xl shadow-pink200/30" 
+          className="w-32 h-auto px-3 md:border-r-2 border-gray636 shadow-xl " 
           alt="Logo" 
         
         />
@@ -25,10 +25,10 @@ const Navigation = () => {
         <ul className="hidden md:flex space-x-6 text-white px-3 pl-5">
           <li>
             <Link
-              to="enrollment"
+              to="enroll-checkout"
               smooth={true}
               duration={500}
-              className=" cursor-pointer hover:text-primary transform transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-2xl"
+              className="  font-regular-ccm cursor-pointer hover:text-primary transform transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-2xl"
             >
               ENROLL
             </Link>
@@ -38,7 +38,7 @@ const Navigation = () => {
               to="drawing-course"
               smooth={true}
               duration={500}
-              className="cursor-pointer hover:text-primary transform transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-2xl"
+              className= "font-regular-ccm cursor-pointer hover:text-primary transform transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-2xl"
             >
               DRAWING COURSE
             </Link>
@@ -48,7 +48,7 @@ const Navigation = () => {
               to="animation-course"
               smooth={true}
               duration={500}
-              className="cursor-pointer hover:text-primary transform transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-2xl"
+              className= "font-regular-ccm cursor-pointer hover:text-primary transform transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-2xl"
             >
               ANIMATION COURSE
             </Link>
@@ -93,7 +93,7 @@ const Navigation = () => {
                 to="enrollment"
                 smooth={true}
                 duration={500}
-                className="cursor-pointer hover:text-primary"
+                className= "font-regular-ccm cursor-pointer hover:text-primary"
                 onClick={toggleMobileMenu} 
               >
                 ENROLL
@@ -104,7 +104,7 @@ const Navigation = () => {
                 to="drawing-course"
                 smooth={true}
                 duration={500}
-                className="cursor-pointer hover:text-primary"
+                className= "font-regular-ccm cursor-pointer hover:text-primary"
                 onClick={toggleMobileMenu} 
               >
                 DRAWING COURSE
@@ -115,7 +115,7 @@ const Navigation = () => {
                 to="animation-course"
                 smooth={true}
                 duration={500}
-                className="cursor-pointer hover:text-primary"
+                className= "font-regular-ccm cursor-pointer hover:text-primary"
                 onClick={toggleMobileMenu} 
               >
                 ANIMATION COURSE

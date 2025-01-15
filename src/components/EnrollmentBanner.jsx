@@ -4,7 +4,7 @@ const EnrollmentBanner = () => {
   const [timeLeft, setTimeLeft] = useState({});
   
   // Set the enrollment end time (2 months, 4 days from now)
-  const endTime = new Date().getTime() + (2 * 30 * 24 * 60 * 60 * 1000) + (4 * 24 * 60 * 60 * 1000); // 2 months + 4 days in milliseconds
+  const endTime = new Date().getTime() + (1 * 30 * 24 * 60 * 60 * 1000) + (1 * 24 * 60 * 60 * 1000); // 2 months + 4 days in milliseconds
 
   useEffect(() => {
     // Update the timer every second
@@ -33,13 +33,13 @@ const EnrollmentBanner = () => {
       <div className='flex flex-col lg:flex-row justify-center items-center'>
       <h1 className="text-3xl md:text-4xl mb-3 md:mb-0 font-impact-regular">ENROLLMENT ENDS IN</h1>
       <div className="text-3xl md:text-4xl mb-0 md:mb-0  ml-2 font-impact-regular">
-        <span className='shadow-xl shadow-pink200/35'>{timeLeft.days} Days </span>
-        <span className='shadow-xl shadow-pink200/35'>{timeLeft.hours} Hours </span>
-        <span className='shadow-xl shadow-pink200/35'>{timeLeft.minutes} Minutes </span>
-        <span className='shadow-xl shadow-pink200/35'>{timeLeft.seconds} Seconds</span>
+        <span className=''>{timeLeft.days} Days </span>
+        <span className=''>{timeLeft.hours} Hours </span>
+        <span className=''>{timeLeft.minutes} Minutes </span>
+        <span className=''>{timeLeft.seconds} Seconds</span>
       </div>
       </div>
-      <p className="mt-3 text-lg md:text-xl ">(LIMITED TO 1,000 STUDENTS ONLY)</p>
+      <p className="mt-3 text-lg md:text-xl font-medium font-medium-kgpr ">(LIMITED TO 1,000 STUDENTS ONLY)</p>
     </div>
   );
 };

@@ -13,13 +13,14 @@ const Banner = () => {
   className="w-full mx-auto w-90 lg:w-97 h-[47vh] sm:h-[60vh] h-[45vh] lg:h-[80vh] lg:h-auto object-cover object-[25%_30%] rounded-lg"
 />
 
-    <div className="absolute top-10 md:right-16 md:left-auto left-0 right-0 z-30 mx-auto w-max" style={{top: 'calc(100% - 35%)'}}>
+    <div className="absolute top-10 md:right-16 lg:right-28 md:left-auto left-0 right-0 z-30 mx-auto w-max" style={{top: 'calc(100% - 35%)'}}>
    <img 
   src={msaText} 
   alt="MSAAcademy-text" 
-  className="-mt-7 -ml-1 w-40 h-auto shadow-2xl object-contain mb-3 md:hidden shadow-pink200/65"
+  className="-mt-7 -ml-1 2xl: w-40 h-auto shadow-2xl object-contain mb-3 md:hidden shadow-pink200/65"
 />
-      <Button/>
+
+      <Button isRounded={false}/>
     </div>
   </div>
   );
