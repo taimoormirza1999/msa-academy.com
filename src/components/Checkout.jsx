@@ -70,12 +70,12 @@ const Checkout = () => {
   
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen rounded-lg my-14 md:-my-32 lg:-my-20  max-w-[1920px]">
+    <div className="flex flex-col items-center justify-center  rounded-lg my-10 mt-14 lg:my-24   mx-auto lg:w-1/2  max-w-[1920px]">
       <div className="grid gap-8 md:grid-cols-2">
         {packages.map((pkg, index) => (
           <div
             key={index}
-            className={`bg-black/40 rounded-primary border-2 ${index==0?'border-purple shadow-purple/35 hover:shadow-purple/75': 'border-pink200 shadow-pink200/35 hover:shadow-pink200/75' } shadow-xl p-6 px-10 w-96 hover:shadow-2xl transition duration-300 text-center cursor-pointer`}
+            className={`bg-black/40 rounded-primary border-2 ${index==0?'border-purple shadow-purple/35 hover:shadow-purple/75': 'border-pink200 shadow-pink200/35 hover:shadow-pink200/75' } shadow-xl p-6 px-10  mx-auto  hover:shadow-2xl transition duration-300 text-center cursor-pointer`}
            
           >
             <h2 className={`text-base font-medium uppercase ${index==0?'text-purple': 'text-pink200'} mb-4 font-regular-ccm`}>{pkg.name}</h2>
@@ -83,10 +83,9 @@ const Checkout = () => {
              <span className="text-white text-5xl font-bold">${(pkg.price)}</span>
             
             <p className="text-white mb-4 font-semibold text-xs mt-3">PER MONTH</p>
-            {/* <p className="text-whites mb-4 font-regular-ccm text-sm">{pkg.description}</p> */}
             <ul className="space-y-2">
               {pkg.includes.map((item, i) => (
-                <li key={i} className="flex items-center">
+                <li key={i} className="flex items-center justify-center">
                   <span className={`w-4 h-4 flex items-center justify-center rounded-full  ${index==0?'text-purple': 'text-pink200'} mr-2`}>
                     ✓
                   </span>

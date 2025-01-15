@@ -3,7 +3,7 @@ import React from 'react';
 const YouWillLearn = () => {
   return (
   
-    <div className="mx-auto mt-16 bg-black/50 md:bg-black/40 py-8 px-6 md:p-10  rounded-primary w-90 md:w-85 shadow-2xl shadow-pink200/40 max-w-[1920px]" >
+    <div className="mx-auto   bg-black/50 md:bg-black/40 py-8 px-6 md:p-10  rounded-primary w-90 md:w-85 shadow-2xl shadow-pink200/40 max-w-[1920px]" >
     <h2 className="text-white text-4xl font-ImpactCustom font-bold mb-8 uppercase">WHAT WILL YOU LEARN</h2>
     <div className="md:flex md:space-x-8">
       {/* First Section */}

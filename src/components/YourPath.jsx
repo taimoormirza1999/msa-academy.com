@@ -1,5 +1,6 @@
 import React from 'react';
 import YourPathImage from '../assets/path_banner.png'; // Replace with your actual image path
+import BannerTextHeading from './utils/BannerTextHeading';
 
 const YourPath = () => {
   return (
@@ -15,10 +16,13 @@ const YourPath = () => {
     />
          </div>
       <div className="bg-black/60 z-50 md:z-0 lg:bg-transparent rounded-xl shadow-xl shadow-pink200/30 lg:shadow-none lg:rounded-none mx-auto lg:absolute md:top-72 lg:top-10 2xl:top-20 lg:left-16 2xl:left-24 p-8 text-white w-95 lg:w-60 2xl:w-30vw flex flex-col justify-center -mt-32 mb-28 md:-mt-104 lg:-mt-0 lg:mb-0">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 ">FIND YOUR PATH AND LEARN ONLINE</h2>
-        <p className="text-sm md:text-lg mb-4 text-ferozi uppercase ">
-          Our courses are designed for students of all skill levels. Explore and learn from scratch with our easy-to-follow videos, allowing you to progress at your own pace.
+        <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 font-ebold-ccm"></h2>
+        <p className="text-sm lg:text-lg xl:text-xl 2xl:text-2xl mb-4 text-ferozi uppercase ">
         </p>
+        <BannerTextHeading
+        heading="FIND YOUR PATH AND LEARN ONLINE"
+        paragraph="Our courses are designed for students of all skill levels. Explore and learn from scratch with our easy-to-follow videos, allowing you to progress at your own pace."
+      />
       </div>
     </div>
   );

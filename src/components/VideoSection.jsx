@@ -25,8 +25,8 @@ const VideoSection = ({videoUrl, imageUrl}) => {
     alt="Video Thumbnail"
     className="w-full h-full object-cover rounded-xl shadow-xl shadow-pink200/45 border-2 border-[#F33C64] "
   />
-  <div className="absolute rounded-full p-2.5 bg-black bg-opacity-50 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-    <FaPlay className="text-white  p-2 w-12 h-12 shadow-2xl" />
+  <div className="absolute rounded-full p-1.5 md:p-2.5 shadow-lg shadow-pink200/35 bg-black bg-opacity-50 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+    <FaPlay className="text-white  p-2 w-10 h-10 md:w-12 md:h-12 shadow-2xl" />
   </div>
       </div>
 

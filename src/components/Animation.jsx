@@ -2,6 +2,7 @@ import React from 'react';
 import AnimationImage from '../assets/animation_banner.png'; // Replace with your actual image path
 import VideoSection from './VideoSections';
 import Button from './utils/Button';
+import BannerTextHeading from './utils/BannerTextHeading';
 
 const Animation = () => {
   return (
@@ -17,12 +18,13 @@ const Animation = () => {
     />
          </div>
       <div className="bg-black/40 lg:bg-transparent rounded-xl shadow-xl shadow-pink200/30 lg:shadow-none lg:rounded-none mx-auto lg:absolute top-20 right-10 p-8 text-white w-95 md:w-85 lg:w-1/2 flex flex-col justify-end lg:justify-center md:mt-5 lg:me-5">
-        <h2 className="text-3xl lg:text-4xl font-bold mb-4">ANIMATION COURSES</h2>
-        <p className="text-sm lg:text-lg mb-4 text-ferozi uppercase ">
-        DO YOU WANT TO HAVE THE ABILITY 
+       
+        <BannerTextHeading
+        heading="ANIMATION COURSES"
+        paragraph="DO YOU WANT TO HAVE THE ABILITY 
 TO MAKE THINGS AND CHARACTERS 
-MOVE? YOU’RE IN THE RIGHT PLACE!
-        </p>
+MOVE? YOU’RE IN THE RIGHT PLACE!"
+      />
       <div className='mt-2 mb-3'>
       <Button textSize="text-sm"/>
       </div>

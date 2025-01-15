@@ -12,7 +12,7 @@ import HerogramLogo from "../assets/herogrmlogo.png";
 
 function Contact() {
   return (
-    <div className="relative max-w-[1920px]">
+    <div className="relative mx-auto max-w-[1920px]">
       <div className="flex flex-col lg:flex-row justify-end items-center p-0 lg:p-8  text-white">
         {/* Channel icons */}
         <div className="flex flex-row gap-5 lg:gap-3 lg:mx-3">

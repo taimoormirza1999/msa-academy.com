@@ -56,7 +56,7 @@ const Navigation = () => {
         </ul>
 
         {/* Mobile Menu Icon */}
-        <div className="md:hidden flex items-center shadow-lg shadow-pink200/30">
+        <div className="md:hidden flex items-center shadow-xl shadow-pink200/45 ">
         <button
   className="text-white text-2xl focus:outline-none"
   onClick={toggleMobileMenu}
@@ -77,7 +77,7 @@ const Navigation = () => {
       exit={{ scale: 0.5, rotate: -90, opacity: 0 }}
       transition={{ duration: 0.3, ease: 'easeInOut' }}
     >
-      <FiMenu className="text-white text-4xl shadow-xl shadow-pink200/35" />
+      <FiMenu className="text-white text-4xl " />
     </motion.div>
   )}
 </button>
