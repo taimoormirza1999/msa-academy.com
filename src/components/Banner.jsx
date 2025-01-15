@@ -6,7 +6,7 @@ import Button from './utils/Button';
 
 const Banner = () => {
   return (
-    <div className="relative w-full 2xl:w-85 h-auto mt-20 md:mt-20 mx-auto md:w-97 mb-16 md:mb-0 lg:mb-16 2xl:mb-0 max-w-[1920px]" >
+    <div className="relative w-full 2xl:w-85 h-auto mt-20 md:mt-20 mx-auto md:w-97 mb-16 md:mb-0 lg:mb-0 xl:mb-0 max-w-[1920px]" >
    <img 
   src={BannerImage} 
   alt="Banner" 

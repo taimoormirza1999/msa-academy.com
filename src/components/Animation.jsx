@@ -7,7 +7,7 @@ import BannerTextHeading from './utils/BannerTextHeading';
 const Animation = () => {
   return (
     <div
-      className="relative w-full md:w-99 h-auto bg-cover bg-center -mt-10 md:mb-10 lg:mb-0lg:-mt-36 2xl:-mt-56 lg:w-full 2xl:w-85 mx-auto max-w-[1920px]"
+      className="relative w-full md:w-99 h-auto bg-cover bg-center -mt-10 md:mb-10 lg:mb-60 xl:mb-10 lg:-mt-36 xl:-mt-56 lg:w-full 2xl:w-85 mx-auto max-w-[1920px]"
      id='animation-course'
     >
          <div className="relative h-auto w-99 md:w-97" >
