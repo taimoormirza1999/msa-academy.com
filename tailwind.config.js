@@ -17,6 +17,10 @@ export default {
       backgroundImage: {
         'custom-gradient': 'linear-gradient(to right, #7f7fff, #ff00ff)',
       },
+      spacing: {
+        104: '26rem', 
+        128: '32rem', 
+      },
       width: {
         '99': '99%',
         '98': '98%',

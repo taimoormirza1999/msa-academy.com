@@ -70,7 +70,7 @@ const Checkout = () => {
   
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen rounded-lg my-10 2xl:-my-16 max-w-[1920px]">
+    <div className="flex flex-col items-center justify-center min-h-screen rounded-lg my-14 md:-my-32 lg:-my-20  max-w-[1920px]">
       <div className="grid gap-8 md:grid-cols-2">
         {packages.map((pkg, index) => (
           <div

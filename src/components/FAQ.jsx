@@ -19,20 +19,20 @@ function FAQ() {
   ];
 
   return (
-    <div className="p-3 py-10 pb-14 my-0 md:my-10 max-w-[1920px]">
+    <div className="p-3 py-6 pb-14 my-0 md:mb-10 lg:my-10 max-w-[1920px]">
       {/* Section Heading */}
       <div className="text-center mb-6 md:mb-12">
         <img
           src={faqHeading}
           alt="FAQ Section"
-          className="mx-auto w-full md:w-7/12	 h-auto"
+          className="mx-auto w-full md:w-9/12 lg:w-7/12	 h-auto"
         />
       </div>
 
-<div className='md:w-9/12 ml-auto'>
-<div className="flex flex-col md:flex-row max-w-full mx-auto md:me-10">
+<div className='lg:w-9/12 ml-auto'>
+<div className="flex flex-col lg:flex-row max-w-full mx-auto md:me-10">
         {faqs.map((faq, index) => (
-          <div key={index} className="mt-4 md:mt-0 mx-1 border-2 shadow-2xl shadow-pink200/50 border-pink200 rounded-2xl p-4 ">
+          <div key={index} className="mt-4 lg:mt-0 mx-1 border-2 shadow-2xl shadow-pink200/50 border-pink200 rounded-2xl p-4 ">
             <div className="font-medium text-lg text-white flex justify-between items-center">
               <span>{faq.question}</span>
             </div>

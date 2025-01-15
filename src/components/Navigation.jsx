@@ -11,7 +11,7 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="bg-black fixed top-0 left-0 right-0 z-50 shadow-lg py-3">
+    <nav className="bg-black fixed top-0 left-0 right-0 z-50 shadow-lg py-2.5 md:py-3">
       <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between md:justify-center ">
         {/* Logo */}
         <img 
@@ -56,7 +56,7 @@ const Navigation = () => {
         </ul>
 
         {/* Mobile Menu Icon */}
-        <div className="md:hidden flex items-center">
+        <div className="md:hidden flex items-center shadow-lg shadow-pink200/30">
         <button
   className="text-white text-2xl focus:outline-none"
   onClick={toggleMobileMenu}
@@ -94,7 +94,7 @@ const Navigation = () => {
                 smooth={true}
                 duration={500}
                 className="cursor-pointer hover:text-primary"
-                onClick={toggleMobileMenu} // Close menu on link click
+                onClick={toggleMobileMenu} 
               >
                 ENROLL
               </Link>
@@ -105,7 +105,7 @@ const Navigation = () => {
                 smooth={true}
                 duration={500}
                 className="cursor-pointer hover:text-primary"
-                onClick={toggleMobileMenu} // Close menu on link click
+                onClick={toggleMobileMenu} 
               >
                 DRAWING COURSE
               </Link>
@@ -116,7 +116,7 @@ const Navigation = () => {
                 smooth={true}
                 duration={500}
                 className="cursor-pointer hover:text-primary"
-                onClick={toggleMobileMenu} // Close menu on link click
+                onClick={toggleMobileMenu} 
               >
                 ANIMATION COURSE
               </Link>

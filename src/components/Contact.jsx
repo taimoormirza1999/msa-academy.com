@@ -13,9 +13,9 @@ import HerogramLogo from "../assets/herogrmlogo.png";
 function Contact() {
   return (
     <div className="relative max-w-[1920px]">
-      <div className="flex flex-col md:flex-row justify-end items-center p-0 md:p-8  text-white">
+      <div className="flex flex-col lg:flex-row justify-end items-center p-0 lg:p-8  text-white">
         {/* Channel icons */}
-        <div className="flex flex-row gap-5 md:gap-3 md:mx-3">
+        <div className="flex flex-row gap-5 lg:gap-3 lg:mx-3">
           <img
             src={HerogramLogo}
             alt="Character Foo"
@@ -69,8 +69,8 @@ function Contact() {
         </div>
 
         {/* Contact Us Section */}
-        <div className="flex flex-col items-center md:items-start md:mx-3">
-          <h5 className="font-semibold text-xl mb-3 md:mb-2 ">CONTACT US</h5>
+        <div className="flex flex-col items-center lg:items-start md:mx-3">
+          <h5 className="font-semibold text-xl mb-3 lg:mb-2 ">CONTACT US</h5>
           <p className="text-sm mb-2">MSA@academy.com</p>
           <p className="text-sm mb-2">
             Dubai, United Arab Emirates - <br /> Dubai World Trade Center, The
@@ -81,7 +81,7 @@ function Contact() {
       <img
         src={CharacterFoo}
         alt="Character Image"
-        className="mt-4 md:mt-0 mx-auto w-1/3 md:w-1/4 h-auto md:absolute bottom-0 left-1"
+        className="mt-4 md:mt-0 mx-auto w-1/3 lg:w-1/4 h-auto lg:absolute bottom-0 left-1"
       />
     </div>
   );
