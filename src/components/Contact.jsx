@@ -6,7 +6,7 @@ import {
   FaTwitter,
   FaTiktok,
 } from "react-icons/fa";
-import CharacterFoo from "../assets/characterfoo.png";
+import CharacterFoo from "../assets/characterFoo.png";
 import logoogdgirl from "../assets/logoogdgirl.png";
 import HerogramLogo from "../assets/herogrmlogo.png";
 
