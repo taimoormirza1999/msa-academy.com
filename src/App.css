@@ -21,6 +21,10 @@
 .font-medium-ccm{
   font-family: 'Cocogoose-Classic-Medium', sans-serif;
 }
+.font-regular-ccm{
+  font-family: 'Cocogoose-Classic-Medium', sans-serif;
+  font-weight: 200;
+}
 .font-impact-regular{
   font-family: 'ImpactCustom', sans-serif;
 }

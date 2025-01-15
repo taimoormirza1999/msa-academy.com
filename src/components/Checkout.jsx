@@ -35,31 +35,71 @@ const Checkout = () => {
     }
   };
 
+//   const packages = [
+//     { name: 'Basic Plan', description: 'Basic plan with essential features.', price: 999, includes: [] },
+//     { name: 'Standard Plan', description: 'Standard plan with more features.', price: 1999, includes: []},
+//   ];
   const packages = [
-    { name: 'Basic Plan', description: 'Basic plan with essential features.', price: 999 },
-    { name: 'Standard Plan', description: 'Standard plan with more features.', price: 1999 },
-    { name: 'Premium Plan', description: 'Premium plan with all features.', price: 2999 },
+    {
+      name: 'Basic',
+      description: 'Basic plan with essential features.',
+      price: 500,
+      includes: [
+        'ACCESS TO ALL DRAWING COURSES',
+        'CHANCE TO BE FEATURED IN MSA YOUTUBE CHANNEL VIDEOS',
+        'ACCESS TO ALL ANIMATION COURSES',
+        'ACCESS TO DOWNLOAD ALL HIGH-QUALITY WALLPAPERS, POSTERS, & EMOJIS',
+        'DISCOUNT ON ALL MSA MERCHANDISE',
+        'FEEDBACK DIRECTLY FROM MENTORS',
+      ],
+    },
+    {
+      name: 'Premium',
+      description: 'Standard plan with more features.',
+      price: 200,
+      includes: [
+        'Access to all drawing courses',
+        'Access to all animation courses',
+        'Access to download all high-quality wallpapers, posters, & emojis',
+        'Discount on all MSA merchandise',
+        'Feedback directly from mentors',
+        'Chance to be featured in MSA YouTube channel videos',
+      ],
+    },
   ];
+  
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen  rounded-lg -mt-10 ">
-      <h1 className="text-4xl font-bold text-white mb-8">Choose Your Plan</h1>
-      <div className="grid gap-8 md:grid-cols-3">
+    <div className="flex flex-col items-center justify-center min-h-screen rounded-lg my-10 ">
+      <div className="grid gap-8 md:grid-cols-2">
         {packages.map((pkg, index) => (
           <div
             key={index}
-            className="bg-white rounded-lg shadow-lg p-6 w-80 hover:shadow-xl transition duration-300"
+            className={`bg-black/40 rounded-primary border-2 ${index==0?'border-purple shadow-purple/35 hover:shadow-purple/75': 'border-pink200 shadow-pink200/35 hover:shadow-pink200/75' } shadow-xl p-6 px-10 w-96 hover:shadow-2xl transition duration-300 text-center cursor-pointer`}
+           
           >
-            <h2 className="text-2xl font-semibold text-gray-800 mb-4">{pkg.name}</h2>
-            <p className="text-gray-600 mb-4">{pkg.description}</p>
-            <p className="text-lg font-bold text-gray-800">
-              Price: <span className="text-blue-600">AED{(pkg.price / 100).toFixed(2)}</span> per month
-            </p>
+            <h2 className={`text-base font-medium uppercase ${index==0?'text-purple': 'text-pink200'} mb-4 font-regular-ccm`}>{pkg.name}</h2>
+           
+             <span className="text-white text-5xl font-bold">${(pkg.price)}</span>
+            
+            <p className="text-white mb-4 font-semibold text-xs mt-3">PER MONTH</p>
+            {/* <p className="text-whites mb-4 font-regular-ccm text-sm">{pkg.description}</p> */}
+            <ul className="space-y-2">
+              {pkg.includes.map((item, i) => (
+                <li key={i} className="flex items-center">
+                  <span className={`w-4 h-4 flex items-center justify-center rounded-full  ${index==0?'text-purple': 'text-pink200'} mr-2`}>
+                    ✓
+                  </span>
+                  <span className="text-white text-sm uppercase my-3">{item}</span>
+                </li>
+              ))}
+              </ul>
+           
             <button
               onClick={() => handleCheckout(pkg)}
-              className="mt-4 w-full bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300"
+              className={` mt-10 mb-3 px-12 border-2 ${index==0?'border-purple shadow-purple/40 hover:shadow-purple': 'border-pink200 hover:shadow-pink200 shadow-pink200/40' }  text-white py-2 px-4 rounded-lg shadow-xl   hover:${index==0?'bg-purple': 'bg-pink200' } hover:shadow-2xl  transition duration-300 uppercase`}
             >
-              Subscribe
+              Enroll NoW
             </button>
           </div>
         ))}
