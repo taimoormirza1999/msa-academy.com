@@ -6,7 +6,7 @@ import Button from './utils/Button';
 
 const Banner = () => {
   return (
-    <div className="relative w-full 2xl:w-85 h-auto mt-20 md:mt-20 mx-auto md:w-97 mb-16 md:mb-0 lg:mb-0 xl:mb-0 max-w-[1920px]" >
+    <div className="relative  w-full 2xl:w-85 h-auto mt-20 md:mt-20 mx-auto md:w-97 mb-16 md:mb-0 lg:mb-0 xl:mb-0 max-w-[1920px]" >
    <img 
   src={BannerImage} 
   alt="Banner" 
@@ -19,8 +19,9 @@ const Banner = () => {
   alt="MSAAcademy-text" 
   className="-mt-7 -ml-1 2xl: w-40 h-auto shadow-2xl object-contain mb-3 md:hidden shadow-pink200/65"
 />
-
+<div className='animate-bounce'>
       <Button isRounded={false}/>
+</div>
     </div>
   </div>
   );

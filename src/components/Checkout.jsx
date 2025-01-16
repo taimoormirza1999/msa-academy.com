@@ -95,12 +95,14 @@ const Checkout = () => {
               ))}
               </ul>
            
-            <button
+           <div className='animate-bounceSlow'>
+           <button
               onClick={() => handleCheckout(pkg)}
-              className={`animate-animate-glow  lg:text-[15.55pt] mt-10 mb-3 px-12 border-[2px] ${index==0?'border-purple shadow-purple/40 hover:shadow-purple': 'border-pink200 hover:shadow-pink200 shadow-pink200/40' }  text-white pt-[12px] pb-[9px] px-[49.5px] rounded-[19px] shadow-xl   hover:${index==0?'bg-purple': 'bg-pink200' } hover:shadow-2xl  transition duration-300 uppercase`}
+              className={`animate-animate-glow  lg:text-[1.0956rem] mt-10 mb-3 px-12 border-[1.7px] ${index==0?'border-purple shadow-purple/40 hover:shadow-purple': 'border-pink200 hover:shadow-pink200 shadow-pink200/40' }  text-white pt-[12px] pb-[9px] px-[42.5px] rounded-[19px] shadow-xl   hover:${index==0?'bg-purple': 'bg-pink200' } hover:shadow-2xl  transition duration-300 uppercase`}
             >
               Enroll NoW!
             </button>
+           </div>
           </div>
         ))}
       </div>

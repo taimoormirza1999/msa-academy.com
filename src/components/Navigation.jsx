@@ -23,15 +23,19 @@ const Navigation = () => {
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6 text-white px-3 pl-5">
-          <li>
-            <Link
+          <li className='animate-bounce'>
+           <div className=''>
+           <Link
               to="enroll-checkout"
               smooth={true}
               duration={500}
-              className="  font-regular-ccm cursor-pointer hover:text-primary transform transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-2xl"
-            >
+              className=" font-regular-ccm cursor-pointer hover:text-primary transform transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-2xl"
+            ><span className=" font-regular-ccm cursor-pointer animate-textGlow">
               ENROLL
+            </span>
+
             </Link>
+           </div>
           </li>
           <li>
             <Link

@@ -26,7 +26,7 @@ const Animation = () => {
 TO MAKE THINGS AND CHARACTERS 
 MOVE? YOU’RE IN THE RIGHT PLACE!"
       />
-      <div className='mt-[30pt] mb-3'>
+      <div className='mt-[30pt] mb-3 animate-bounce'>
       <Button textSize="text-sm"/>
       </div>
         <VideoSection/>

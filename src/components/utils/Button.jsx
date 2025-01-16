@@ -13,7 +13,7 @@ function Button({isRounded = true}) {
       
          <Link 
       to='enroll-checkout' 
-      className={` animate-pulse2 bg-red cursor-pointer text-white border-2 border-red hover:border-black hover:text-white py-3 text-sm md:text-[1.129rem] font-medium px-6 md:px-7  shadow-lg transform transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-2xl shadow-red/70 ${isRounded ? 'rounded-[14px]' : 'rounded-[0.7rem]'}`}
+      className={` animate-pulse2 bg-red cursor-pointer text-white border-2 border-red hover:scale-105 hover:text-white py-3 text-sm md:text-[1.129rem] font-medium px-6 md:px-7  shadow-lg transform transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-2xl shadow-red/70 ${isRounded ? 'rounded-[14px]' : 'rounded-[0.7rem]'}`}
     >ENROLL NOW!
     </Link>
     </div>
