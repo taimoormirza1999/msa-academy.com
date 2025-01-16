@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
+import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 
 const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
 
 const Checkout = () => {
+  const [loading, setLoading] = useState(false);
+
   const handleCheckout = async (packageDetails) => {
+    setLoading(true); 
+
     const body = {
         packageName: packageDetails.name,  
         description: packageDetails.description,
@@ -21,7 +26,7 @@ const Checkout = () => {
     const session = await response.json();
 
     if (session.id) {
-      // Redirect to Stripe Checkout
+      setLoading(false);
       const stripe = await stripePromise;
       const { error } = await stripe.redirectToCheckout({
         sessionId: session.id,
@@ -100,7 +105,14 @@ const Checkout = () => {
               onClick={() => handleCheckout(pkg)}
               className={`animate-animate-glow  lg:text-[1.0956rem] mt-10 mb-3 px-12 border-[1.7px] ${index==0?'border-purple shadow-purple/40 hover:shadow-purple': 'border-pink200 hover:shadow-pink200 shadow-pink200/40' }  text-white pt-[12px] pb-[9px] px-[42.5px] rounded-[19px] shadow-xl   hover:${index==0?'bg-purple': 'bg-pink200' } hover:shadow-2xl  transition duration-300 uppercase`}
             >
-              Enroll NoW!
+             
+              {loading ? (
+        <span className="flex flex-row justify-center">
+          <AiOutlineLoading3Quarters className="animate-spin mx-3" /> Processing..
+        </span>
+      ) : (
+        'Enroll Now!'
+      )}
             </button>
            </div>
           </div>
