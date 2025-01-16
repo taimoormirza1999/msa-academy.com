@@ -5,9 +5,7 @@ import BackgroundImage from "./assets/background.jpg";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import ScrollAnimation from "./components/utils/ScrollAnimation";
-import BlinkAnimationWrapper from "./components/utils/BlinkAnimationWrapper";
-import { AiOutlineWhatsApp } from "react-icons/ai";
-
+import LoaderWrapper from "./components/utils/LoaderWrapper";
 const Banner = lazy(() => import("./components/Banner"));
 const EnrollmentBanner = lazy(() => import("./components/EnrollmentBanner"));
 const YourPath = lazy(() => import("./components/YourPath"));
@@ -54,59 +52,59 @@ const App = () => {
           </Suspense>
           <Suspense fallback={<Loader />}>
             <ScrollAnimation>
+              <LoaderWrapper>
               <EnrollmentBanner />
+              </LoaderWrapper>
             </ScrollAnimation>
           </Suspense>
           <Suspense fallback={<Loader />}>
             <ScrollAnimation variants={slideIn("bottom")}>
-              <YourPath />
+              <LoaderWrapper><YourPath /></LoaderWrapper>
             </ScrollAnimation>
           </Suspense>
           <Suspense fallback={<Loader />}>
             <ScrollAnimation variants={slideIn("bottom")}>
-              <Animation />
+              <LoaderWrapper><Animation /></LoaderWrapper>
             </ScrollAnimation>
           </Suspense>
           <Suspense fallback={<Loader />}>
             <ScrollAnimation variants={slideIn("bottom")}>
-              <Drawing />
+              <LoaderWrapper><Drawing /></LoaderWrapper>
             </ScrollAnimation>
           </Suspense>
           <Suspense fallback={<Loader />}>
             <ScrollAnimation variants={fadeIn}>
-              <Mentors />
+              <LoaderWrapper><Mentors /></LoaderWrapper>
             </ScrollAnimation>
           </Suspense>
           <Suspense fallback={<Loader />}>
             <ScrollAnimation variants={fadeIn}>
-              <YouWillLearn />
+              <LoaderWrapper><YouWillLearn /></LoaderWrapper>
             </ScrollAnimation>
           </Suspense>
           <Suspense fallback={<Loader />}>
             <ScrollAnimation variants={fadeIn}>
-              <CommunityMap />
+              <LoaderWrapper><CommunityMap /></LoaderWrapper>
             </ScrollAnimation>
           </Suspense>
           <Suspense fallback={<Loader />}>
             <ScrollAnimation>
-              <EnrollmentBanner />
+              <LoaderWrapper><EnrollmentBanner /></LoaderWrapper>
             </ScrollAnimation>
           </Suspense>
           <Suspense fallback={<Loader />}>
             <ScrollAnimation variants={fadeIn}>
-              <Checkout />
+              <LoaderWrapper><Checkout /></LoaderWrapper>
             </ScrollAnimation>
           </Suspense>
           <Suspense fallback={<Loader />}>
             <ScrollAnimation variants={fadeIn}>
-              <FAQ />
+              <LoaderWrapper><FAQ /></LoaderWrapper>
             </ScrollAnimation>
           </Suspense>
-          {/* <BlinkAnimationWrapper/> */}
-          <>
-         
-          </>
+          <LoaderWrapper>
           <Footer />
+          </LoaderWrapper>
         </div>
       )}
     </>
