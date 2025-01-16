@@ -56,7 +56,7 @@ const Checkout = () => {
     {
       name: 'Premium',
       description: 'Standard plan with more features.',
-      price: 50,
+      price: 30,
       includes: [
         {text:'Access to all drawing courses', status:1},
         {text:'Access to all animation courses', status:1},
