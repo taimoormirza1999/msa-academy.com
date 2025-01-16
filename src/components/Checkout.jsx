@@ -43,60 +43,61 @@ const Checkout = () => {
     {
       name: 'Basic',
       description: 'Basic plan with essential features.',
-      price: 500,
+      price: 20,
       includes: [
-        'ACCESS TO ALL DRAWING COURSES',
-        'CHANCE TO BE FEATURED IN MSA YOUTUBE CHANNEL VIDEOS',
-        'ACCESS TO ALL ANIMATION COURSES',
-        'ACCESS TO DOWNLOAD ALL HIGH-QUALITY WALLPAPERS, POSTERS, & EMOJIS',
-        'DISCOUNT ON ALL MSA MERCHANDISE',
-        'FEEDBACK DIRECTLY FROM MENTORS',
+       {text:'ACCESS TO ALL DRAWING COURSES', status:1},
+        {text:'CHANCE TO BE FEATURED IN MSA YOUTUBE CHANNEL VIDEOS', status:1},
+        {text:'ACCESS TO ALL ANIMATION COURSES', status:0},
+        {text:'ACCESS TO DOWNLOAD ALL HIGH-QUALITY WALLPAPERS, POSTERS, & EMOJIS', status:0},
+        {text:'DISCOUNT ON ALL MSA MERCHANDISE', status:0},
+        {text:'FEEDBACK DIRECTLY FROM MENTORS', status:0},
       ],
     },
     {
       name: 'Premium',
       description: 'Standard plan with more features.',
-      price: 200,
+      price: 50,
       includes: [
-        'Access to all drawing courses',
-        'Access to all animation courses',
-        'Access to download all high-quality wallpapers, posters, & emojis',
-        'Discount on all MSA merchandise',
-        'Feedback directly from mentors',
-        'Chance to be featured in MSA YouTube channel videos',
+        {text:'Access to all drawing courses', status:1},
+        {text:'Access to all animation courses', status:1},
+        {text:'Access to download all high-quality wallpapers, posters, & emojis', status:1},
+        {text:'Discount on all MSA merchandise', status:1},
+        {text:'Feedback directly from mentors', status:1},
+        {text:'Chance to be featured in MSA YouTube channel videos', status:1},
       ],
     },
   ];
   
 
   return (
-    <div className="flex flex-col items-center justify-center  rounded-lg my-10 mt-14 lg:my-24 w-85 mx-auto lg:w-1/2  max-w-[1920px]" id='enroll-checkout'>
+    <div className="flex flex-col items-center mt-[50.5px] mb-[40.5px] lg:mb-0 lg:mt-[87.5px] justify-center w-85 mx-auto lg:w-1/2 2x:w-[75%]  max-w-[1920px]" id='enroll-checkout'>
       <div className="grid gap-8 md:grid-cols-2">
         {packages.map((pkg, index) => (
           <div
             key={index}
-            className={`bg-black/40 rounded-primary border-2 ${index==0?'border-purple shadow-purple/35 hover:shadow-purple/75': 'border-pink200 shadow-pink200/35 hover:shadow-pink200/75' } shadow-xl p-6 px-10  mx-auto  hover:shadow-2xl transition duration-300 text-center cursor-pointer`}
+            className={`bg-black/40 rounded-[3rem] border-2 ${index==0?'border-purple shadow-purple/35 hover:shadow-purple/75': 'border-pink200 shadow-pink200/35 hover:shadow-pink200/75'} shadow-xl p-6 px-7 lg:px-8  mx-auto hover:shadow-2xl transition duration-300 text-center cursor-pointer`}
            
           >
-            <h2 className={`text-base font-medium uppercase ${index==0?'text-purple': 'text-pink200'} mb-4 font-regular-ccm`}>{pkg.name}</h2>
+            <h2 className={`mt-[1rem] text-[13.32pt] text-base font-medium text-center uppercase ${index==0?'text-purple': 'text-pink200'} -mb-3 font-regular-ccm text-left`}>{pkg.name}</h2>
            
-             <span className="text-white text-5xl font-bold font-medium-kgpr">${(pkg.price)}</span>
+             <span className="text-white font-bold text-[4.1rem] font-medium-fgm">${(pkg.price)}</span>
             
-            <p className="text-white mb-4 font-semibold text-xs mt-3">PER MONTH</p>
-            <ul className="space-y-2">
+            <p className="text-white font-semibold text-xs text-[0.6rem] -mt-2">PER MONTH</p>
+            <ul className="mt-[2.5rem] lg:mt-[3.5rem] mb-[1.5rem] lg:mb-[2.1rem]">
               {pkg.includes.map((item, i) => (
-                <li key={i} className="flex items-center justify-center">
-                  <span className={`w-4 h-4 flex items-center justify-center rounded-full  ${index==0?'text-purple': 'text-pink200'} mr-2`}>
+                <li key={i} className="flex  ">
+                  <span className={`w-4 h-4 flex items-center justify-center rounded-full  ${index==0?'text-purple': 'text-pink200'} mr-3 mt-2`}>
                     ✓
                   </span>
-                  <span className="text-white text-sm uppercase my-3">{item}</span>
+                  <span className={`${item.status == 1 ? 'text-white' : ' text-white text-opacity-20'} text-sm uppercase my-1 text-left text-[0.84rem]`}>{item.text}</span>
+
                 </li>
               ))}
               </ul>
            
             <button
               onClick={() => handleCheckout(pkg)}
-              className={` mt-10 mb-3 px-12 border ${index==0?'border-purple shadow-purple/40 hover:shadow-purple': 'border-pink200 hover:shadow-pink200 shadow-pink200/40' }  text-white py-2 px-8 rounded-[0.7rem] shadow-xl   hover:${index==0?'bg-purple': 'bg-pink200' } hover:shadow-2xl  transition duration-300 uppercase`}
+              className={`animate-animate-glow  lg:text-[15.55pt] mt-10 mb-3 px-12 border-[2px] ${index==0?'border-purple shadow-purple/40 hover:shadow-purple': 'border-pink200 hover:shadow-pink200 shadow-pink200/40' }  text-white pt-[12px] pb-[9px] px-[49.5px] rounded-[19px] shadow-xl   hover:${index==0?'bg-purple': 'bg-pink200' } hover:shadow-2xl  transition duration-300 uppercase`}
             >
               Enroll NoW!
             </button>

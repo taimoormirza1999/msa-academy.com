@@ -52,9 +52,21 @@ export default {
       },
       keyframes: {
         glow: {
-          '0%, 100%': { boxShadow: '0 0 10px 2px rgba(240, 45, 0, 0.6)' }, // Matches 'red' color
-          '50%': { boxShadow: '0 0 20px 4px rgba(240, 45, 0, 1)' },
-        },
+          '0%, 100%': { 
+            boxShadow: '0 0 13px 3px rgba(255, 0, 255, 0.5)' 
+          },
+          '25%': { 
+            boxShadow: '0 0 17px 4px rgba(255, 0, 255, 0.6)' 
+          },
+          '50%': { 
+            boxShadow: '0 0 21px 6px rgba(255, 0, 255, 0.8)' 
+          },
+          '75%': { 
+            boxShadow: '0 0 17px 4px rgba(255, 0, 255, 0.6)' 
+          },
+        }
+        
+        
       },
       borderRadius: {
         'primary': '1.8rem', 

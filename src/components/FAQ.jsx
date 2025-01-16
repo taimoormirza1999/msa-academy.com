@@ -19,7 +19,7 @@ function FAQ() {
   ];
 
   return (
-    <div className="p-3 py-6 pb-14 my-0 md:mb-10 lg:my-10 mx-auto max-w-[1920px]">
+    <div className="p-3 py-6 pb-14 my-0 md:mb-10 lg:mt-[154px] mx-auto max-w-[1920px]">
       {/* Section Heading */}
       <div className="text-center mb-6 md:mb-12">
         <img
@@ -32,11 +32,11 @@ function FAQ() {
 <div className='lg:w-9/12 ml-auto'>
 <div className="flex flex-col lg:flex-row max-w-full mx-auto md:me-10">
         {faqs.map((faq, index) => (
-          <div key={index} className="mt-4 lg:mt-0 mx-1 border-2 shadow-2xl shadow-pink200/50 border-pink200 rounded-2xl p-4 ">
+          <div key={index} className=" font-medium-fgm mt-4 lg:mt-0 mx-1 border-2 shadow-2xl shadow-pink200/50 border-pink200 rounded-2xl p-4 ">
             <div className="font-medium text-lg text-white flex justify-between items-center">
               <span>{faq.question}</span>
             </div>
-            <div className="mt-2 text-white">
+            <div className="mt-2 text-white ">
               {faq.answer}
             </div>
           </div>

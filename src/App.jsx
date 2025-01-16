@@ -5,6 +5,8 @@ import BackgroundImage from "./assets/background.jpg";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import ScrollAnimation from "./components/utils/ScrollAnimation";
+import BlinkAnimationWrapper from "./components/utils/BlinkAnimationWrapper";
+import { AiOutlineWhatsApp } from "react-icons/ai";
 
 const Banner = lazy(() => import("./components/Banner"));
 const EnrollmentBanner = lazy(() => import("./components/EnrollmentBanner"));
@@ -34,7 +36,7 @@ const App = () => {
     hidden: { opacity: 0, x: direction === "bottom" ? -100 : 100 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.9 } },
   });
-
+ 
   return (
     <>
       {loading ? (
@@ -86,6 +88,11 @@ const App = () => {
             </ScrollAnimation>
           </Suspense>
           <Suspense fallback={<Loader />}>
+            <ScrollAnimation>
+              <EnrollmentBanner />
+            </ScrollAnimation>
+          </Suspense>
+          <Suspense fallback={<Loader />}>
             <ScrollAnimation variants={fadeIn}>
               <Checkout />
             </ScrollAnimation>
@@ -95,6 +102,10 @@ const App = () => {
               <FAQ />
             </ScrollAnimation>
           </Suspense>
+          {/* <BlinkAnimationWrapper/> */}
+          <>
+         
+          </>
           <Footer />
         </div>
       )}

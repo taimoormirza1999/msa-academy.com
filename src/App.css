@@ -24,9 +24,19 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'FranklinGothicMedium';
+  src: url('./assets/fonts/FranklinGothicMedium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 body{
   font-family: 'Cocogoose-Classic-Medium', sans-serif;
   font-weight: 200; 
+}
+.font-medium-fgm{
+  font-family: 'FranklinGothicMedium', sans-serif;
+  font-weight: medium;
 }
 .font-medium-kgpr{
   font-family: 'KozGoPr6NRegular', sans-serif;
@@ -44,4 +54,8 @@ body{
 }
 .font-ebold-ccm{
   font-family: 'Cocogoose-Classic-ExtraBold', sans-serif;
+}
+
+::selection{
+  color: #ff00ff;
 }

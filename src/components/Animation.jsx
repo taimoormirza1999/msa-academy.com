@@ -17,15 +17,16 @@ const Animation = () => {
      className="w-full md:w-98 h-[38vh] sm:h-[60vh] md:h-full lg:h-full  object-cover object-[20%_30%]"
     />
          </div>
-      <div className="bg-black/40 lg:bg-transparent rounded-xl shadow-xl shadow-pink200/30 lg:shadow-none lg:rounded-none mx-auto lg:absolute top-20 right-10 p-8 text-white w-95 md:w-85 lg:w-1/2 flex flex-col justify-end lg:justify-center md:mt-5 lg:me-5">
+      <div className="bg-black/40 lg:bg-transparent rounded-xl shadow-xl shadow-pink200/30 lg:shadow-none lg:rounded-none mx-auto lg:absolute top-20 right-10 p-8 text-white w-95 md:w-85 lg:w-[54%] flex flex-col justify-end lg:justify-center md:mt-5 lg:me-5">
        
         <BannerTextHeading
+        paragraphspecificwidth={true}
         heading="ANIMATION COURSES"
         paragraph="DO YOU WANT TO HAVE THE ABILITY 
 TO MAKE THINGS AND CHARACTERS 
 MOVE? YOU’RE IN THE RIGHT PLACE!"
       />
-      <div className='mt-2 mb-3'>
+      <div className='mt-[30pt] mb-3'>
       <Button textSize="text-sm"/>
       </div>
         <VideoSection/>
