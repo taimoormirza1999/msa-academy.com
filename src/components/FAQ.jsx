@@ -29,10 +29,10 @@ function FAQ() {
         />
       </div>
 
-<div className='w-[90%] mx-auto lg:w-9/12 ml-auto'>
+<div className='w-[90%] ml-auto me-auto lg:me-0 lg:w-[70%] xl:w-[76%] lg:ml-auto  flex flex-row justify-end'>
 <div className="flex flex-col lg:flex-row max-w-full mx-auto md:me-10">
         {faqs.map((faq, index) => (
-          <div key={index} className=" font-medium-fgm mt-4 lg:mt-0 mx-1 border-2 shadow-2xl shadow-pink200/50 border-pink200 rounded-2xl p-4 ">
+          <div key={index} className=" font-medium-fgm mt-4 lg:mt-0 mx-1 border-2 shadow-2xl shadow-pink200/50 border-pink200 rounded-2xl p-4 xl:px-6 ">
             <div className="font-medium text-lg text-white flex justify-between items-center">
               <span>{faq.question}</span>
             </div>
