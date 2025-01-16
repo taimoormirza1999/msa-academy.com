@@ -82,7 +82,7 @@ export default {
       },
       animation: {
         'spin-fast': 'spin 0.8s linear infinite',
-        'animate-glow': 'glow 1.5s infinite ease-in-out',
+        'animate-glow': 'glow 1.85s infinite ease-in-out',
          bounceSlow: 'bounceSlow 1.7s infinite',
          textGlow:'textGlow 1.7s infinite ease-in-out',
 
