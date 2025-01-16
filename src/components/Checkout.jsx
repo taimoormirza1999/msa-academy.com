@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
-
-const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
-
+const stripePromise = loadStripe('pk_live_51MKOWOClZeY3V6PeILqmhyHFCw3LsPj0DIix9slFGovMEJkYFt0YoAayUWmfqDzB8O6MRY9nQjSpOZmrHkwevvpC00UhPik0o4');
 const Checkout = () => {
   const packages = [
     {
@@ -34,16 +32,14 @@ const Checkout = () => {
     },
   ];
   const [loadingStates, setLoadingStates] = useState(packages.map(() => false));
-
   const handleCheckout = async (packageDetails, index) => {
     setLoadingStates((prev) => {
       const newLoadingStates = [...prev];
-      newLoadingStates[index] = true;  
+      newLoadingStates[index] = true;
       return newLoadingStates;
     });
-
     const body = {
-        packageName: packageDetails.name,  
+        packageName: packageDetails.name,
         description: packageDetails.description,
         priceAmount: packageDetails.price,
       };
@@ -54,20 +50,17 @@ const Checkout = () => {
       },
       body: JSON.stringify(body),
     });
-
     const session = await response.json();
-
     if (session.id) {
       setLoadingStates((prev) => {
         const newLoadingStates = [...prev];
-        newLoadingStates[index] = false;  
+        newLoadingStates[index] = false;
         return newLoadingStates;
       });
       const stripe = await stripePromise;
       const { error } = await stripe.redirectToCheckout({
         sessionId: session.id,
       });
-
       if (error) {
         console.error('Error during checkout redirection:', error);
       }
@@ -75,9 +68,6 @@ const Checkout = () => {
       console.error('Failed to create session:', session.error);
     }
   };
-
-   
-
   return (
     <div className="flex flex-col items-center mt-[50.5px] mb-[40.5px] lg:mb-0 lg:mt-[87.5px] justify-center w-85 mx-auto lg:w-1/2 2x:w-[75%]  max-w-[1920px]" id='enroll-checkout'>
       <div className="grid gap-8 md:grid-cols-2">
@@ -85,12 +75,9 @@ const Checkout = () => {
           <div
             key={index}
             className={`bg-black/40 rounded-[3rem] border-2 ${index==0?'border-purple shadow-purple/35 hover:shadow-purple/75': 'border-pink200 shadow-pink200/35 hover:shadow-pink200/75'} shadow-xl p-6 px-7 lg:px-8  mx-auto hover:shadow-2xl transition duration-300 text-center cursor-pointer`}
-           
           >
             <h2 className={`mt-[1rem] text-[13.32pt] text-base font-medium text-center uppercase ${index==0?'text-purple': 'text-pink200'} -mb-3 font-regular-ccm text-left`}>{pkg.name}</h2>
-           
              <span className="text-white font-bold text-[4.1rem] font-medium-fgm">${(pkg.price)}</span>
-            
             <p className="text-white font-semibold text-xs text-[0.6rem] -mt-2">PER MONTH</p>
             <ul className="mt-[2.5rem] lg:mt-[3.5rem] mb-[1.5rem] lg:mb-[2.1rem]">
               {pkg.includes.map((item, i) => (
@@ -99,17 +86,14 @@ const Checkout = () => {
                     ✓
                   </span>
                   <span className={`${item.status == 1 ? 'text-white' : ' text-white text-opacity-20'} text-sm uppercase my-1 text-left text-[0.84rem]`}>{item.text}</span>
-
                 </li>
               ))}
               </ul>
-           
            <div className='animate-bounceSlow'>
            <button
               onClick={() =>handleCheckout(pkg, index)}
               className={`animate-animate-glow  lg:text-[1.0956rem] mt-10 mb-3 px-12 border-[1.7px] ${index==0?'border-purple shadow-purple/40 hover:shadow-purple': 'border-pink200 hover:shadow-pink200 shadow-pink200/40' }  text-white pt-[12px] pb-[9px] px-[42.5px] rounded-[19px] shadow-xl   hover:${index==0?'bg-purple': 'bg-pink200' } hover:shadow-2xl  transition duration-300 uppercase`}
             >
-             
              {loadingStates[index] ? (
     <span className="flex flex-row justify-center">
       <AiOutlineLoading3Quarters className="animate-spin mx-3" /> Processing..
@@ -125,5 +109,4 @@ const Checkout = () => {
     </div>
   );
 };
-
 export default Checkout;
