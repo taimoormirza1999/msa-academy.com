@@ -5,45 +5,6 @@ import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
 
 const Checkout = () => {
-  const [loading, setLoading] = useState(false);
-
-  const handleCheckout = async (packageDetails) => {
-    setLoading(true); 
-
-    const body = {
-        packageName: packageDetails.name,  
-        description: packageDetails.description,
-        priceAmount: packageDetails.price,
-      };
-      const response = await fetch(`${import.meta.env.VITE_BACKEND_API}create-checkout-session`, {
-        method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(body),
-    });
-
-    const session = await response.json();
-
-    if (session.id) {
-      setLoading(false);
-      const stripe = await stripePromise;
-      const { error } = await stripe.redirectToCheckout({
-        sessionId: session.id,
-      });
-
-      if (error) {
-        console.error('Error during checkout redirection:', error);
-      }
-    } else {
-      console.error('Failed to create session:', session.error);
-    }
-  };
-
-//   const packages = [
-//     { name: 'Basic Plan', description: 'Basic plan with essential features.', price: 999, includes: [] },
-//     { name: 'Standard Plan', description: 'Standard plan with more features.', price: 1999, includes: []},
-//   ];
   const packages = [
     {
       name: 'Basic',
@@ -72,7 +33,50 @@ const Checkout = () => {
       ],
     },
   ];
-  
+  const [loadingStates, setLoadingStates] = useState(packages.map(() => false));
+
+  const handleCheckout = async (packageDetails, index) => {
+    setLoadingStates((prev) => {
+      const newLoadingStates = [...prev];
+      newLoadingStates[index] = true;  
+      return newLoadingStates;
+    });
+
+    const body = {
+        packageName: packageDetails.name,  
+        description: packageDetails.description,
+        priceAmount: packageDetails.price,
+      };
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_API}create-checkout-session`, {
+        method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    });
+
+    const session = await response.json();
+
+    if (session.id) {
+      setLoadingStates((prev) => {
+        const newLoadingStates = [...prev];
+        newLoadingStates[index] = false;  
+        return newLoadingStates;
+      });
+      const stripe = await stripePromise;
+      const { error } = await stripe.redirectToCheckout({
+        sessionId: session.id,
+      });
+
+      if (error) {
+        console.error('Error during checkout redirection:', error);
+      }
+    } else {
+      console.error('Failed to create session:', session.error);
+    }
+  };
+
+   
 
   return (
     <div className="flex flex-col items-center mt-[50.5px] mb-[40.5px] lg:mb-0 lg:mt-[87.5px] justify-center w-85 mx-auto lg:w-1/2 2x:w-[75%]  max-w-[1920px]" id='enroll-checkout'>
@@ -102,17 +106,17 @@ const Checkout = () => {
            
            <div className='animate-bounceSlow'>
            <button
-              onClick={() => handleCheckout(pkg)}
+              onClick={() =>handleCheckout(pkg, index)}
               className={`animate-animate-glow  lg:text-[1.0956rem] mt-10 mb-3 px-12 border-[1.7px] ${index==0?'border-purple shadow-purple/40 hover:shadow-purple': 'border-pink200 hover:shadow-pink200 shadow-pink200/40' }  text-white pt-[12px] pb-[9px] px-[42.5px] rounded-[19px] shadow-xl   hover:${index==0?'bg-purple': 'bg-pink200' } hover:shadow-2xl  transition duration-300 uppercase`}
             >
              
-              {loading ? (
-        <span className="flex flex-row justify-center">
-          <AiOutlineLoading3Quarters className="animate-spin mx-3" /> Processing..
-        </span>
-      ) : (
-        'Enroll Now!'
-      )}
+             {loadingStates[index] ? (
+    <span className="flex flex-row justify-center">
+      <AiOutlineLoading3Quarters className="animate-spin mx-3" /> Processing..
+    </span>
+  ) : (
+    'Enroll Now!'
+  )}
             </button>
            </div>
           </div>
