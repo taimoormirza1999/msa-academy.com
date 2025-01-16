@@ -81,7 +81,7 @@ function Contact() {
       <img
         src={CharacterFoo}
         alt="Character Image"
-        className="mt-4 md:mt-0 mx-auto w-1/3 lg:w-1/4 h-auto lg:absolute bottom-0 left-1"
+        className="mt-4 md:mt-0 mx-auto w-[40%] lg:w-1/4 h-auto lg:absolute bottom-0 left-1"
       />
     </div>
   );

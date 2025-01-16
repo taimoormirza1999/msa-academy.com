@@ -29,17 +29,17 @@ const EnrollmentBanner = () => {
   }, []);
 
   return (
-    <div id='enrollment' className="bg-black text-white text-center py-8 md:py-5 ">
+    <div id='enrollment' className="bg-black text-white text-center py-5 md:py-5 ">
       <div className='flex flex-col lg:flex-row justify-center items-center'>
-      <h1 className="text-3xl md:text-4xl mb-3 md:mb-0 font-impact-regular">ENROLLMENT ENDS IN</h1>
-      <div className="text-3xl md:text-4xl mb-0 md:mb-0  ml-2 font-impact-regular">
+      <h1 className="text-2xl md:text-4xl mb-1 md:mb-0 font-impact-regular">ENROLLMENT ENDS IN</h1>
+      <div className="text-2xl md:text-4xl mb-0 md:mb-0  ml-2 font-impact-regular">
         <span className=''>{timeLeft.days} Days </span>
         <span className=''>{timeLeft.hours} Hours </span>
         <span className=''>{timeLeft.minutes} Minutes </span>
         <span className=''>{timeLeft.seconds} Seconds</span>
       </div>
       </div>
-      <p className="mt-3 text-lg md:text-xl font-medium font-medium-kgpr ">(LIMITED TO 1,000 STUDENTS ONLY)</p>
+      <p className="mt-1.5 md:mt-3 text-sm md:text-xl font-medium font-medium-kgpr ">(LIMITED TO 1,000 STUDENTS ONLY)</p>
     </div>
   );
 };
