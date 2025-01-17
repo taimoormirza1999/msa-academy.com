@@ -4,9 +4,9 @@ import VideoSection from './VideoSection';
 
 const VideoSections = () => {
   return (
-    <div className="container md:mx-auto px-0 md:px-4">
+    <div className="container md:mx-auto px-0 md:px-4 2xl:me-auto lg:flex lg:justify-end lg:pe-10">
      
-      <div className="grid grid-cols-2 md:grid-cols-2 mt-10 gap-3 md:gap-5">
+      <div className="grid grid-cols-2 md:grid-cols-2 mt-10 gap-3 md:gap-5 ">
         {/* Video 1 */}
         <div className=" h-52 md:h-48 flex justify-center items-center text-center rounded-2xl">
        <VideoSection videoUrl='https://www.youtube.com/embed/3n-mizhCajY?si=QmcPzeUmEdDD5BaH' imageUrl={"https://i.ytimg.com/vi/3n-mizhCajY/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCAkrpLTPqV8b4w4ny6WMK-Xffn4w" }/>

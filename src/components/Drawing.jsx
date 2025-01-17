@@ -16,7 +16,7 @@ const Drawing = () => {
       className="w-full h-[48vh] sm:h-[60vh] md:h-full lg:h-full 2xl:h-3/4 object-cover md:object-contain"
     />
          </div>
-      <div className="bg-black/50 lg:bg-transparent rounded-xl shadow-xl shadow-pink200/30 lg:shadow-none lg:rounded-none mx-auto lg:absolute top-28 md:top-32 2xl:top-48 left-32 2xl:left-64 p-8  text-white w-95 md:w-85 lg:w-1/2 flex flex-col justify-center md:mt-5">
+      <div className="bg-black/50 lg:bg-transparent rounded-xl shadow-xl shadow-pink200/30 lg:shadow-none lg:rounded-none mx-auto lg:absolute top-28 md:top-32 2xl:top-64 left-32 2xl:left-48 p-8  text-white w-95 md:w-85 lg:w-1/2 2xl:w-[37%] flex flex-col justify-center md:mt-5">
       
         <BannerTextHeading
         heading="DRAWING COURSES"
@@ -24,7 +24,7 @@ const Drawing = () => {
 JOIN US TO UNLEASH THE ARTISTIC 
 TALENT WHITHIN YOU!"
       />
-        <div className='mt-2 mb-3 animate-bounce'>
+        <div className='mt-2 mb-3 lg:mt-[30pt] animate-bounce'>
       <Button textSize="text-sm"/>
       </div>
 

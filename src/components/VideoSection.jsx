@@ -15,7 +15,7 @@ const VideoSection = ({videoUrl, imageUrl}) => {
   };
 
   return (
-    <div>
+    <>
       <div
         className="relative h-52 md:h-48 flex justify-center items-center text-center rounded-2xl cursor-pointer"
         onClick={() => handleVideoClick()}
@@ -50,7 +50,7 @@ const VideoSection = ({videoUrl, imageUrl}) => {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 };
 
