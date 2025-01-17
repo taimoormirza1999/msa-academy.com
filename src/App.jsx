@@ -6,6 +6,7 @@ import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import ScrollAnimation from "./components/utils/ScrollAnimation";
 import LoaderWrapper from "./components/utils/LoaderWrapper";
+import { loadOptinMonster } from "./services/optinMonster";
 const Banner = lazy(() => import("./components/Banner"));
 const EnrollmentBanner = lazy(() => import("./components/EnrollmentBanner"));
 const YourPath = lazy(() => import("./components/YourPath"));
@@ -21,6 +22,7 @@ const App = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    loadOptinMonster()
     const timer = setTimeout(() => setLoading(false), 3000); 
     return () => clearTimeout(timer);
   }, []);
