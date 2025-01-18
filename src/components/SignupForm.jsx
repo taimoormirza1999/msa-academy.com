@@ -77,7 +77,7 @@ const SignupForm = () => {
         ) : (
           <div className="text-center my-3">
             <h2 className="text-2xl font-bold text-white">Thank You!</h2>
-            <p className="text-sm text-gray-600">Thanks for subscribing.</p>
+            <p className="text-sm text-gray-50">Thanks for subscribing.</p>
             <button
               onClick={() => setShowPopup(false)}
               className="mt-4 py-2 px-4 bg-pink200 text-white font-semibold rounded-lg shadow hover:bg-pink200 focus:outline-none focus:ring-2 focus:ring-pink200"
