@@ -6,6 +6,7 @@ const SignupForm = () => {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [showPopup, setShowPopup] = useState(true);
+  const [loading, setLoading] = useState(false); // Added loader state
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -14,6 +15,7 @@ const SignupForm = () => {
       return;
     }
 
+    setLoading(true); // Start loader
     try {
       const response = await fetch(`${import.meta.env.VITE_BACKEND_API}subscribe2`, {
         method: 'POST',
@@ -32,12 +34,14 @@ const SignupForm = () => {
       }
     } catch (err) {
       toast.error('Something went wrong. Please try again later.');
+    } finally {
+      setLoading(false); // End loader
     }
   };
 
   return showPopup ? (
     <div className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50">
-      <div className="w-[95%] lg:w-full bg-[#111] rounded-lg max-w-md  shadow-2xl   shadow-pink200/30 lg:shadow-pink200/20 ">
+      <div className="w-[95%] lg:w-full bg-[#111] rounded-lg max-w-md shadow-2xl shadow-pink200/30 lg:shadow-pink200/20">
         <img
           src="https://mcusercontent.com/e1f1a4e7afa29f4705570bedf/images/e212dfae-95cb-0a7c-afb0-47948cedbf32.png"
           alt="Newsletter"
@@ -51,7 +55,7 @@ const SignupForm = () => {
               </h2>
               <div className="flex flex-col">
                 <label htmlFor="email" className="text-sm font-semibold text-white">
-                  Email Address <spanc className="text-sm text-red">*</spanc>
+                  Email Address <span className="text-sm text-red">*</span>
                 </label>
                 <input
                   type="email"
@@ -65,9 +69,12 @@ const SignupForm = () => {
               </div>
               <button
                 type="submit"
-                className="w-full py-2 px-4 bg-pink200 text-white font-semibold rounded-lg shadow hover:bg-pink200 shadow-2xl shadow-pink200/20 focus:outline-none focus:ring-2 focus:ring-pink200 font-medium-kgpr my-4"
+                disabled={loading} // Disable button while loading
+                className={`w-full py-2 px-4 bg-pink200 text-white font-semibold rounded-lg shadow hover:bg-pink200 shadow-2xl shadow-pink200/20 focus:outline-none focus:ring-2 focus:ring-pink200 font-medium-kgpr my-4 ${
+                  loading ? 'opacity-50 cursor-not-allowed' : ''
+                }`}
               >
-                Subscribe
+                {loading ? 'Submitting...' : 'Subscribe'} {/* Show loader text */}
               </button>
               <p className="text-sm text-center mt-4 mb-3 font-medium-kgpr">
                 Join our community and be the first to know about new courses, exclusive offers, and more.
