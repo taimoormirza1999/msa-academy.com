@@ -37,7 +37,7 @@ const SignupForm = () => {
 
   return showPopup ? (
     <div className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50">
-      <div className="bg-[#111] rounded-lg max-w-md w-full shadow-2xl shadow-pink200/20">
+      <div className="w-[95%] lg:w-full bg-[#111] rounded-lg max-w-md  shadow-2xl   shadow-pink200/30 lg:shadow-pink200/20 ">
         <img
           src="https://mcusercontent.com/e1f1a4e7afa29f4705570bedf/images/e212dfae-95cb-0a7c-afb0-47948cedbf32.png"
           alt="Newsletter"
@@ -46,12 +46,12 @@ const SignupForm = () => {
         {!submitted ? (
           <form onSubmit={handleSubmit}>
             <div className="p-6 text-white">
-              <h2 className="text-2xl font-bold text-white text-center font-medium-fgm">
+              <h2 className="text-xl lg:text-2xl font-bold text-white text-center font-medium-fgm uppercase mb-3">
                 🎉Get exclusive updates and offers🎉
               </h2>
               <div className="flex flex-col">
-                <label htmlFor="email" className="text-sm font-semibold text-gray-700">
-                  Email Address
+                <label htmlFor="email" className="text-sm font-semibold text-white">
+                  Email Address <spanc className="text-sm text-red">*</spanc>
                 </label>
                 <input
                   type="email"
@@ -59,7 +59,7 @@ const SignupForm = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
-                  className="mt-1 px-4 py-2 border text-gray-800 border-gray-300 rounded-lg shadow-sm focus:ring-pink200 focus:shadow focus:shadow-pink200/30"
+                  className="mt-1 px-4 py-2 border text-gray-800 border-gray-300 rounded-lg shadow-sm focus:ring-pink200 focus:shadow focus:shadow-pink200/30 font-medium-fgm"
                   required
                 />
               </div>
@@ -75,12 +75,12 @@ const SignupForm = () => {
             </div>
           </form>
         ) : (
-          <div className="text-center my-3">
-            <h2 className="text-2xl font-bold text-white">Thank You!</h2>
-            <p className="text-sm text-gray-50">Thanks for subscribing.</p>
+          <div className="text-center my-4">
+            <h2 className="text-2xl font-bold text-white font-medium-fgm">Thank You!</h2>
+            <p className="text-sm text-gray-50 font-medium-kgpr">Thanks for subscribing🎉.</p>
             <button
               onClick={() => setShowPopup(false)}
-              className="mt-4 py-2 px-4 bg-pink200 text-white font-semibold rounded-lg shadow hover:bg-pink200 focus:outline-none focus:ring-2 focus:ring-pink200"
+              className="mt-4 py-2 px-4 bg-pink200 text-white font-semibold rounded-lg shadow hover:bg-pink200 focus:outline-none focus:ring-2 focus:ring-pink200 mb-4"
             >
               Close
             </button>
