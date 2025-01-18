@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { loadStripe } from '@stripe/stripe-js';
-import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 const stripePromise = loadStripe('pk_live_51MKOWOClZeY3V6PeILqmhyHFCw3LsPj0DIix9slFGovMEJkYFt0YoAayUWmfqDzB8O6MRY9nQjSpOZmrHkwevvpC00UhPik0o4');
-const Checkout = () => {
+const Checkout = ({showModal,setShowModal}) => {
+  // const [showModal, setShowModal] = useState(false);
+
   const packages = [
     {
       name: 'Basic',
@@ -31,13 +32,8 @@ const Checkout = () => {
       ],
     },
   ];
-  const [loadingStates, setLoadingStates] = useState(packages.map(() => false));
   const handleCheckout = async (packageDetails, index) => {
-    setLoadingStates((prev) => {
-      const newLoadingStates = [...prev];
-      newLoadingStates[index] = true;
-      return newLoadingStates;
-    });
+    setShowModal(true);
     const body = {
         packageName: packageDetails.name,
         description: packageDetails.description,
@@ -52,11 +48,6 @@ const Checkout = () => {
     });
     const session = await response.json();
     if (session.id) {
-      setLoadingStates((prev) => {
-        const newLoadingStates = [...prev];
-        newLoadingStates[index] = false;
-        return newLoadingStates;
-      });
       const stripe = await stripePromise;
       const { error } = await stripe.redirectToCheckout({
         sessionId: session.id,
@@ -70,6 +61,22 @@ const Checkout = () => {
   };
   return (
     <div className="flex flex-col items-center mt-[50.5px] mb-[40.5px] lg:mb-0 lg:mt-[87.5px] justify-center w-85 mx-auto lg:w-1/2 2x:w-[75%]  max-w-[1920px]" id='enroll-checkout'>
+        {showModal && (
+      <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-80 z-50">
+    <div className="relative w-11/12 md:w-1/3 bg-gradient-to-br from-[#7f7fff78]  to-[#ff00ff96] border shadow-lg shadow-pink200 border-pink200 p-6 rounded-3xl shadow-2xl">
+      <h2 className="text-white text-2xl font-bold font-medium-fgm text-center">
+        Redirecting to Secure Checkout...
+      </h2>
+      <p className="text-white text-sm text-center font-medium-kgpr mt-2">
+        Please wait while we process your request.
+      </p>
+      <div className="flex justify-center my-5">
+        <div className="w-10 h-10 border-4 border-white border-opacity-50 rounded-full border-t-[#ff00ff] animate-spin"></div>
+      </div>
+   
+    </div>
+  </div>
+ )}
       <div className="grid gap-8 md:grid-cols-2">
         {packages.map((pkg, index) => (
           <div
@@ -94,13 +101,8 @@ const Checkout = () => {
               onClick={() =>handleCheckout(pkg, index)}
               className={`animate-animate-glow  lg:text-[1.0956rem] mt-10 mb-3 px-12 border-[1.7px] ${index==0?'border-purple shadow-purple/40 hover:shadow-purple': 'border-pink200 hover:shadow-pink200 shadow-pink200/40' }  text-white pt-[12px] pb-[9px] px-[42.5px] rounded-[19px] shadow-xl   hover:${index==0?'bg-purple': 'bg-pink200' } hover:shadow-2xl  transition duration-300 uppercase`}
             >
-             {loadingStates[index] ? (
-    <span className="flex flex-row justify-center">
-      <AiOutlineLoading3Quarters className="animate-spin mx-3" /> Processing..
-    </span>
-  ) : (
-    'Enroll Now!'
-  )}
+              Enroll Now!
+         
             </button>
            </div>
           </div>

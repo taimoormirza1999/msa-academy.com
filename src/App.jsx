@@ -20,7 +20,11 @@ const FAQ = lazy(() => import("./components/FAQ"));
 
 const App = () => {
   const [loading, setLoading] = useState(true);
+  const [showModal, setShowModal] = useState(false);
 
+  const handleModalClose = () => {
+    setShowModal(false);
+  };
   useEffect(() => {
     loadOptinMonster()
     const timer = setTimeout(() => setLoading(false), 3000); 
@@ -96,7 +100,7 @@ const App = () => {
           </Suspense>
           <Suspense fallback={<Loader />}>
             <ScrollAnimation variants={fadeIn}>
-              <LoaderWrapper><Checkout /></LoaderWrapper>
+              <LoaderWrapper><Checkout showModal={showModal} setShowModal={setShowModal} /></LoaderWrapper>
             </ScrollAnimation>
           </Suspense>
           <Suspense fallback={<Loader />}>
