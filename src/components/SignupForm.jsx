@@ -15,7 +15,7 @@ const SignupForm = () => {
     }
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_BACKEND_API}subscribe`, {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_API}subscribe2`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
