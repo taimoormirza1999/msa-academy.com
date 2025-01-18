@@ -47,7 +47,7 @@ const SignupForm = () => {
           <form onSubmit={handleSubmit}>
             <div className="p-6 text-white">
               <h2 className="text-xl lg:text-2xl font-bold text-white text-center font-medium-fgm uppercase mb-3">
-                🎉Get exclusive updates and offers🎉
+                🎉Get exclusive <span className='text-pink200'>updates</span> and offers🎉
               </h2>
               <div className="flex flex-col">
                 <label htmlFor="email" className="text-sm font-semibold text-white">
