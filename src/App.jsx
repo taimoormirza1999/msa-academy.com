@@ -4,6 +4,7 @@ import Loader from "./components/Loader";
 import BackgroundImage from "./assets/background.jpg";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
+import SignupForm from "./components/SignupForm";
 import ScrollAnimation from "./components/utils/ScrollAnimation";
 import LoaderWrapper from "./components/utils/LoaderWrapper";
 import { loadOptinMonster } from "./services/optinMonster";
@@ -21,10 +22,25 @@ const FAQ = lazy(() => import("./components/FAQ"));
 const App = () => {
   const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
+  const [showForm, setShowForm] = useState(false);
 
-  const handleModalClose = () => {
-    setShowModal(false);
-  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight;
+      const totalHeight = document.documentElement.scrollHeight;
+      if (scrollPosition >= totalHeight * 0.4) {
+        setShowForm(true);
+        window.removeEventListener('scroll', handleScroll); // Remove listener after showing form
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   useEffect(() => {
     loadOptinMonster()
     const timer = setTimeout(() => setLoading(false), 3000); 
@@ -109,6 +125,7 @@ const App = () => {
             </ScrollAnimation>
           </Suspense>
           <LoaderWrapper>
+          {showForm && <SignupForm />}
           <Footer />
           </LoaderWrapper>
         </div>
