@@ -75,7 +75,7 @@ const SignupForm = () => {
             </div>
           </form>
         ) : (
-          <div className="text-center">
+          <div className="text-center my-3">
             <h2 className="text-2xl font-bold text-white">Thank You!</h2>
             <p className="text-sm text-gray-600">Thanks for subscribing.</p>
             <button
