@@ -59,7 +59,7 @@ const SignupForm = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
-                className="mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-pink200 focus:shadow focus:shadow-pink200/30"
+                className="mt-1 px-4 py-2 border text-gray-800 border-gray-300 rounded-lg shadow-sm focus:ring-pink200 focus:shadow focus:shadow-pink200/30"
                 required
               />
             </div>
