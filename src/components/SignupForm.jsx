@@ -14,7 +14,6 @@ const SignupForm = () => {
       toast.error('Please enter a valid email.');
       return;
     }
-
     setLoading(true); // Start loader
     try {
       const response = await fetch(`${import.meta.env.VITE_BACKEND_API}subscribe2`, {
@@ -28,6 +27,9 @@ const SignupForm = () => {
       const data = await response.json();
       if (response.ok) {
         setSubmitted(true);
+      const expiryDate = new Date();
+      expiryDate.setFullYear(expiryDate.getFullYear() + 1); 
+      document.cookie = `email=${encodeURIComponent(email)}; expires=${expiryDate.toUTCString()}; path=/`;
         toast.success('Successfully subscribed!');
       } else {
         toast.error(data.error || 'Subscription failed.');
