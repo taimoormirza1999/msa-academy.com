@@ -30,7 +30,15 @@ const App = () => {
       const scrollPosition = window.scrollY + window.innerHeight;
       const totalHeight = document.documentElement.scrollHeight;
       if (scrollPosition >= totalHeight * 0.4) {
-        
+        const cookies = document.cookie.split('; ');
+        const emailCookie = cookies.find(row => row.startsWith('email='));
+        if (emailCookie) {
+        const email = decodeURIComponent(emailCookie.split('=')[1]);
+        setShowForm(false);
+        }else{
+          setShowForm(true);
+        }
+
         window.removeEventListener('scroll', handleScroll); 
       }
     };
@@ -42,15 +50,7 @@ const App = () => {
     };
   }, []);
   useEffect(() => {
-    const cookies = document.cookie.split('; ');
-    console.log("object")
-const emailCookie = cookies.find(row => row.startsWith('email='));
-if (emailCookie) {
-const email = decodeURIComponent(emailCookie.split('=')[1]);
-setShowForm(false);
-}else{
-  setShowForm(true);
-}
+
     const timer = setTimeout(() => setLoading(false), 3000); 
     return () => clearTimeout(timer);
     

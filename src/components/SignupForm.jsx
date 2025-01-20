@@ -37,7 +37,7 @@ const SignupForm = () => {
     } catch (err) {
       toast.error('Something went wrong. Please try again later.');
     } finally {
-      setLoading(false); // End loader
+      setLoading(false);
     }
   };
 
