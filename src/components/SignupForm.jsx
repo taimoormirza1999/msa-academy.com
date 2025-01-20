@@ -85,7 +85,7 @@ const SignupForm = () => {
           </form>
         ) : (
           <div className="text-center my-4">
-            <h2 className="text-2xl font-bold text-white font-medium-fgm">Thank You!</h2>
+            <h2 className="text-2xl font-bold text-white font-medium-fgm mt-2 mb-3">Thank You!</h2>
             <p className="text-sm text-gray-50 font-medium-kgpr">Thanks for subscribing🎉.</p>
             <button
               onClick={() => setShowPopup(false)}
