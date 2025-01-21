@@ -71,14 +71,14 @@ const SignupForm = React.memo(() => {
         <button
           type="submit"
           disabled={loading}
-          className={`w-full py-2 px-4 bg-pink200 text-white font-semibold rounded-lg shadow hover:bg-pink200 shadow-2xl shadow-pink200/20 focus:outline-none focus:ring-2 focus:ring-pink200 font-medium-kgpr my-4 ${
+          className={`w-full py-2 px-4 bg-pink200  text-white font-semibold rounded-lg shadow hover:bg-pink200 shadow-2xl shadow-pink200/20 focus:outline-none focus:ring-2 focus:ring-pink200 font-medium-fgm my-4 ${
             loading ? 'opacity-50 cursor-not-allowed' : ''
           }`}
         >
           {loading ? 'Submitting...' : 'Subscribe'}
         </button>
         <p className="text-sm text-center mt-4 mb-3 font-medium-kgpr">
-          Join our community and be the first to know about new courses, exclusive offers, and more...
+          Join our community and be the first to know about new courses, exclusive offers, and more.
         </p>
       </div>
     </form>
