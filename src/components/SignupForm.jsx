@@ -78,7 +78,7 @@ const SignupForm = React.memo(() => {
           {loading ? 'Submitting...' : 'Subscribe'}
         </button>
         <p className="text-sm text-center mt-4 mb-3 font-medium-kgpr">
-          Join our community and be the first to know about new courses, exclusive offers, and more.
+          Join our community and be the first to know about new courses, exclusive offers, and more...
         </p>
       </div>
     </form>
