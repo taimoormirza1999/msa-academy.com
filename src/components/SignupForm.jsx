@@ -1,45 +1,88 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const SignupForm = () => {
+const SignupForm = React.memo(() => {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [showPopup, setShowPopup] = useState(true);
-  const [loading, setLoading] = useState(false); // Added loader state
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!email.trim() || !/^\S+@\S+\.\S+$/.test(email)) {
-      toast.error('Please enter a valid email.');
-      return;
-    }
-    setLoading(true); // Start loader
-    try {
-      const response = await fetch(`${import.meta.env.VITE_BACKEND_API}subscribe2`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email }),
-      });
+  const handleChange = useCallback((e) => setEmail(e.target.value), []);
 
-      const data = await response.json();
-      if (response.ok) {
-        setSubmitted(true);
-      const expiryDate = new Date();
-      expiryDate.setFullYear(expiryDate.getFullYear() + 1); 
-      document.cookie = `email=${encodeURIComponent(email)}; expires=${expiryDate.toUTCString()}; path=/`;
-        toast.success('Successfully subscribed!');
-      } else {
-        toast.error(data.error || 'Subscription failed.');
+  const handleSubmit = useCallback(
+    async (e) => {
+      e.preventDefault();
+      if (!email.trim() || !/^[\w.%+-]+@[\w.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+        toast.error('Please enter a valid email.');
+        return;
       }
-    } catch (err) {
-      toast.error('Something went wrong. Please try again later.');
-    } finally {
-      setLoading(false);
-    }
-  };
+      setLoading(true);
+      try {
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_API}subscribe2`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ email }),
+        });
+
+        const data = await response.json();
+        if (response.ok) {
+          setSubmitted(true);
+          setTimeout(() => {
+            const expiryDate = new Date();
+            expiryDate.setFullYear(expiryDate.getFullYear() + 1);
+            document.cookie = `email=${encodeURIComponent(email)}; expires=${expiryDate.toUTCString()}; path=/`;
+          }, 0);
+          toast.success('Successfully subscribed!');
+        } else {
+          toast.error(data.error || 'Subscription failed.');
+        }
+      } catch (err) {
+        toast.error('Something went wrong. Please try again later.');
+      } finally {
+        setLoading(false);
+      }
+    },
+    [email]
+  );
+
+  const formContent = useMemo(() => (
+    <form onSubmit={handleSubmit}>
+      <div className="p-6 text-white">
+        <h2 className="text-xl lg:text-2xl font-bold text-white text-center font-medium-fgm uppercase mb-3">
+          🎉Get exclusive <span className='text-pink200'>updates</span> and offers🎉
+        </h2>
+        <div className="flex flex-col">
+          <label htmlFor="email" className="text-sm font-semibold text-white">
+            Email Address <span className="text-sm text-red">*</span>
+          </label>
+          <input
+            type="email"
+            id="email"
+            value={email}
+            onChange={handleChange}
+            placeholder="Enter your email"
+            className="mt-1 px-4 py-2 border text-gray-800 border-gray-300 rounded-lg shadow-sm focus:ring-pink200 focus:shadow focus:shadow-pink200/30 font-medium-fgm"
+            required
+          />
+        </div>
+        <button
+          type="submit"
+          disabled={loading}
+          className={`w-full py-2 px-4 bg-pink200 text-white font-semibold rounded-lg shadow hover:bg-pink200 shadow-2xl shadow-pink200/20 focus:outline-none focus:ring-2 focus:ring-pink200 font-medium-kgpr my-4 ${
+            loading ? 'opacity-50 cursor-not-allowed' : ''
+          }`}
+        >
+          {loading ? 'Submitting...' : 'Subscribe'}
+        </button>
+        <p className="text-sm text-center mt-4 mb-3 font-medium-kgpr">
+          Join our community and be the first to know about new courses, exclusive offers, and more.
+        </p>
+      </div>
+    </form>
+  ), [email, loading, handleSubmit]);
 
   return showPopup ? (
     <div className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50">
@@ -50,39 +93,7 @@ const SignupForm = () => {
           className="w-full h-64 object-cover rounded-t-lg"
         />
         {!submitted ? (
-          <form onSubmit={handleSubmit}>
-            <div className="p-6 text-white">
-              <h2 className="text-xl lg:text-2xl font-bold text-white text-center font-medium-fgm uppercase mb-3">
-                🎉Get exclusive <span className='text-pink200'>updates</span> and offers🎉
-              </h2>
-              <div className="flex flex-col">
-                <label htmlFor="email" className="text-sm font-semibold text-white">
-                  Email Address <span className="text-sm text-red">*</span>
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email"
-                  className="mt-1 px-4 py-2 border text-gray-800 border-gray-300 rounded-lg shadow-sm focus:ring-pink200 focus:shadow focus:shadow-pink200/30 font-medium-fgm"
-                  required
-                />
-              </div>
-              <button
-                type="submit"
-                disabled={loading} // Disable button while loading
-                className={`w-full py-2 px-4 bg-pink200 text-white font-semibold rounded-lg shadow hover:bg-pink200 shadow-2xl shadow-pink200/20 focus:outline-none focus:ring-2 focus:ring-pink200 font-medium-kgpr my-4 ${
-                  loading ? 'opacity-50 cursor-not-allowed' : ''
-                }`}
-              >
-                {loading ? 'Submitting...' : 'Subscribe'} {/* Show loader text */}
-              </button>
-              <p className="text-sm text-center mt-4 mb-3 font-medium-kgpr">
-                Join our community and be the first to know about new courses, exclusive offers, and more.
-              </p>
-            </div>
-          </form>
+          formContent
         ) : (
           <div className="text-center my-4">
             <h2 className="text-2xl font-bold text-white font-medium-fgm mt-2 mb-3">Thank You!</h2>
@@ -99,6 +110,6 @@ const SignupForm = () => {
       <ToastContainer />
     </div>
   ) : null;
-};
+});
 
 export default SignupForm;
