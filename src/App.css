@@ -59,3 +59,7 @@ body{
 ::selection{
   color: #ff00ff;
 }
+:root {
+  /* --duration: 10s;
+  --gap: 106px; */
+  }

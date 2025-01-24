@@ -13,6 +13,9 @@ export default {
         purple:'#7f7fff',
         pink200:'#ff00ff',
         gray636: '#636363',
+        background: "hsl(var(--background))",
+        border: "hsl(var(--border))",
+        foreground: "hsl(var(--foreground))"
       },
       backgroundImage: {
         'custom-gradient': 'linear-gradient(to right, #7f7fff, #ff00ff)',
@@ -51,6 +54,14 @@ export default {
         '90vw': '90vw'
       },
       keyframes: {
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(calc(-100% - var(--gap)))" },
+        },
+        "marquee-vertical": {
+          "0%": { transform: "translateY(0)" },
+          "100%": { transform: "translateY(calc(-100% - var(--gap)))" },
+        },
         glow: {
           '0%, 100%': { 
             boxShadow: '0 0 13px 3px rgba(255, 0, 255, 0.5)' 
@@ -75,6 +86,7 @@ export default {
         '0%, 100%': { textShadow: '0 0 15px #ff00ff, 0 0 25px #ff00ff, 0 0 35px #ffffff' },
         '50%': { textShadow: '0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ff00ff' },
       }, 
+    
         
       },
       borderRadius: {
@@ -86,7 +98,8 @@ export default {
          bounceSlow: 'bounceSlow 1.7s infinite',
          textGlow:'textGlow 1.7s infinite ease-in-out',
 
-
+         marquee: "marquee 3s linear infinite",
+        
       },
       borderWidth: {
         '3': '3px',

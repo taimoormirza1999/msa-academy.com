@@ -6,6 +6,7 @@ import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import ScrollAnimation from "./components/utils/ScrollAnimation";
 import LoaderWrapper from "./components/utils/LoaderWrapper";
+import MarqueeWrapper from "./components/MarqueeWrapper";
 const Banner = lazy(() => import("./components/Banner"));
 const EnrollmentBanner = lazy(() => import("./components/EnrollmentBanner"));
 const YourPath = lazy(() => import("./components/YourPath"));
@@ -43,11 +44,18 @@ const App = () => {
         <div
           className="min-h-screen mx-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${BackgroundImage})` }}
-        >
+        >     
           <Navigation />
           <Suspense fallback={<Loader />}>
             <ScrollAnimation variants={fadeIn}>
               <Banner />
+              {/* <main className="flex items-center justify-center py-5 pb-32">
+      <div className="container  ">
+        <MarqueeWrapper/>
+       
+      </div>
+    </main> */}
+ 
             </ScrollAnimation>
           </Suspense>
           <Suspense fallback={<Loader />}>
