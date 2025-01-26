@@ -130,12 +130,20 @@ const App = () => {
               <LoaderWrapper><Checkout showModal={showModal} setShowModal={setShowModal} /></LoaderWrapper>
             </ScrollAnimation>
           </Suspense>
-           <main className="flex items-center justify-center pt-8 mb-8 lg:-mb-10 lg:pt-24 ">
+          <Suspense fallback={<Loader />}>
+            <ScrollAnimation>
+              <LoaderWrapper>
+              <main className="flex items-center justify-center pt-8 mb-8 lg:-mb-10 lg:pt-24 overflow-x-hidden ">
            <div className="container-fluid w-[99.5%] mx-auto  rounded-full shadow-xl shadow-primary200  ">
   {/* <MarqueeWrapper /> */}
   <MarqueeWrapper2 />
 </div>
     </main>
+
+              </LoaderWrapper>
+            </ScrollAnimation>
+          </Suspense>
+          
           <Suspense fallback={<Loader />}>
             <ScrollAnimation variants={fadeIn}>
               <LoaderWrapper><FAQ /></LoaderWrapper>
