@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 
 const Drawing = () => {
   return (
-    <motion.div  whileHover={{ scale: 1.03 }}
+    <motion.div 
     transition={{ type: "spring", stiffness: 500, damping: 50 }} className="relative w-full md:w-99 h-auto bg-cover bg-center mt-0 md:mt-28 mb-10 md:mb-20 lg:mb-10  mx-auto max-w-[1920px]"
      id="drawing-course"
     >
