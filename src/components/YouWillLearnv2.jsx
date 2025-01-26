@@ -1,5 +1,6 @@
 import React from "react"
 import { motion } from "framer-motion"
+import { Link } from "react-scroll"
 // import Image from "next/image"
 
 const FeatureCard = ({ title, description, icon }) => (
@@ -172,14 +173,14 @@ const MSALearningSection = () => {
         ))}
       </ul>
       <motion.div className="mt-0 flex flex-row justify-center lg:justify-start" variants={itemVariants}>
-            <motion.a
-              href="#enroll"
-              className="animate-animate-glow  lg:text-[1.0956rem] mt-12 mb-7 border-[1.7px] bg-opacity-10  text-white border-pink200 hover:shadow-pink200 shadow-pink200/40 pt-[15px]  pb-[15px] px-[32.5px] rounded-[19px] shadow-xl font-medium-fgm uppercase"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+      <Link
+      smooth={true}
+      duration={800}
+              to='enroll-checkout' 
+              className="cursor-pointer animate-animate-glow  lg:text-[1.0956rem] mt-12 mb-7 border-[1.7px] bg-opacity-10  text-white border-pink200 hover:shadow-pink200 shadow-pink200/40 pt-[15px]  pb-[15px] px-[32.5px] rounded-[19px] shadow-xl font-medium-fgm uppercase"
             >
               Start Your MSA Journey
-            </motion.a>
+            </Link>
           </motion.div>
     </div>
 
@@ -212,8 +213,6 @@ const MSALearningSection = () => {
   </div>
 </motion.div>
 
-
-      
         </motion.div>
       </div>
     </section>

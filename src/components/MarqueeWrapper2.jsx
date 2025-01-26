@@ -4,45 +4,87 @@ import { Marquee } from "./utils/marquee";
 
 const reviews = [
   {
-    name: "Jack",
-    username: "@jack",
-    body: "I've never seen anything like this before. It's amazing. I love it.",
-    img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
+      name: "Alex Johnson",
+      username: "@alexj",
+      body: "This experience exceeded my expectations in every way. Incredible work!",
+      img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=3000&auto=format&fit=crop",
+    },
+    {
+      name: "Sophia Martinez",
+      username: "@sophia.m",
+      body: "I'm blown away by the quality. It's been such a game-changer for me!",
+      img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=3000&auto=format&fit=crop",
+    },
+    {
+      name: "Michael Lee",
+      username: "@mikelee",
+      body: "Absolutely stunning! I can't believe how easy and intuitive this is.",
+      img: "https://images.unsplash.com/photo-1542206395-9feb3edaa68d?q=80&w=3000&auto=format&fit=crop",
+    },
+    {
+      name: "Emily Carter",
+      username: "@emily.c",
+      body: "The attention to detail here is incredible. Hats off to the team!",
+      img: "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?q=80&w=3000&auto=format&fit=crop",
+    },
+    {
+      name: "Liam Brown",
+      username: "@liamb",
+      body: "Simply outstanding. I’ve never been this impressed before!",
+      img: "https://images.unsplash.com/photo-1562564055-b42b8a4e59b7?q=80&w=3000&auto=format&fit=crop",
+    },
+    {
+      name: "Olivia Wilson",
+      username: "@livwilson",
+      body: "This is innovation at its finest. Truly remarkable!",
+      img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=3000&auto=format&fit=crop",
+    },
+
+];
+const reviews2 = [
   {
-    name: "Jill",
-    username: "@jill",
-    body: "I don't know what to say. I'm speechless. This is amazing.",
-    img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-  {
-    name: "John",
-    username: "@john",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=3461&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-  {
-    name: "Jane",
-    username: "@jane",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-  {
-    name: "Jenny",
-    username: "@jenny",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://plus.unsplash.com/premium_photo-1688739352540-a75b102d8551?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-  {
-    name: "James",
-    username: "@james",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://plus.unsplash.com/premium_photo-1688350808212-4e6908a03925?q=80&w=3008&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
+      name: "Daniel Kim",
+      username: "@danielk",
+      body: "Wow, just wow. It’s hard to believe something like this even exists.",
+      img: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=3000&auto=format&fit=crop",
+    },
+    {
+      name: "Mia Davis",
+      username: "@miad",
+      body: "This has made my life so much easier. Can't recommend it enough!",
+      img: "https://images.unsplash.com/photo-1535720516272-a2348f8d79e5?q=80&w=3000&auto=format&fit=crop",
+    },
+    {
+      name: "Ethan Thomas",
+      username: "@ethan.t",
+      body: "Mind-blowing experience! I’m officially a fan for life.",
+      img: "https://images.unsplash.com/photo-1554151228-14d9def656e4?q=80&w=3000&auto=format&fit=crop",
+    },
+    {
+      name: "Ava Robinson",
+      username: "@ava.robinson",
+      body: "Hands down the best thing I've come across this year. Exceptional.",
+      img: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=3000&auto=format&fit=crop",
+    },
+    {
+      name: "Noah White",
+      username: "@noahw",
+      body: "Phenomenal in every sense. Keep up the amazing work!",
+      img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=3000&auto=format&fit=crop",
+    },
+    {
+      name: "Isabella Lopez",
+      username: "@bella.l",
+      body: "I’m completely in awe. This sets a new standard of excellence.",
+      img: "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?q=80&w=3000&auto=format&fit=crop",
+    },
+
+
 ];
 
+
 const firstRow = reviews.slice(0, reviews.length / 2);
-const secondRow = reviews.slice(reviews.length / 2);
+const secondRow = reviews2.slice(reviews.length / 2);
 
 const ReviewCard = ({ img, name, username, body }) => {
   return (
