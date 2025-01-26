@@ -8,7 +8,6 @@ import SignupForm from "./components/SignupForm";
 import ScrollAnimation from "./components/utils/ScrollAnimation";
 import LoaderWrapper from "./components/utils/LoaderWrapper";
 import SubscriptionSuccess from "./components/Pages/SubscriptionSuccess";
-import MarqueeWrapper from "./components/MarqueeWrapper";
 import MarqueeWrapper2 from "./components/MarqueeWrapper2";
 const Banner = lazy(() => import("./components/Banner"));
 const EnrollmentBanner = lazy(() => import("./components/EnrollmentBanner"));
