@@ -51,6 +51,14 @@ export default {
         '90vw': '90vw'
       },
       keyframes: {
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(calc(-100% - var(--gap)))" },
+        },
+        "marquee-vertical": {
+          "0%": { transform: "translateY(0)" },
+          "100%": { transform: "translateY(calc(-100% - var(--gap)))" },
+        },
         glow: {
           '0%, 100%': { 
             boxShadow: '0 0 13px 3px rgba(255, 0, 255, 0.5)' 
@@ -85,7 +93,7 @@ export default {
         'animate-glow': 'glow 1.85s infinite ease-in-out',
          bounceSlow: 'bounceSlow 1.7s infinite',
          textGlow:'textGlow 1.7s infinite ease-in-out',
-
+         marquee: "marquee 5s linear infinite ",
 
       },
       borderWidth: {

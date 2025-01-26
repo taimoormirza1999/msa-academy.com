@@ -1,12 +1,13 @@
 import React from 'react';
-import AnimationImage from '../assets/animation_banner.png'; // Replace with your actual image path
+import AnimationImage from '../assets/animation_banner.png';
 import VideoSection from './VideoSections';
 import Button from './utils/Button';
 import BannerTextHeading from './utils/BannerTextHeading';
-
+import { motion } from "framer-motion"
 const Animation = () => {
   return (
-    <div
+    <motion.div  
+    transition={{ type: "spring", stiffness: 500, damping: 50 }}
       className="relative w-full md:w-99 h-auto bg-cover bg-center -mt-10 md:mb-10 lg:mb-60 xl:mb-10 lg:-mt-36 xl:-mt-56 lg:w-full 2xl:w-85 mx-auto max-w-[1920px]"
      id='animation-course'
     >
@@ -31,7 +32,7 @@ MOVE? YOU’RE IN THE RIGHT PLACE!"
       </div>
         <VideoSection/>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -36,7 +36,7 @@ function FAQ() {
             <div className="font-medium text-lg text-white flex justify-between items-center">
               <span>{faq.question}</span>
             </div>
-            <div className="mt-2 text-white ">
+            <div className="mt-2 text-white text-sm lg:text-base ">
               {faq.answer}
             </div>
           </div>

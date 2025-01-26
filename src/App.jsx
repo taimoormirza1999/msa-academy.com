@@ -7,7 +7,9 @@ import Footer from "./components/Footer";
 import SignupForm from "./components/SignupForm";
 import ScrollAnimation from "./components/utils/ScrollAnimation";
 import LoaderWrapper from "./components/utils/LoaderWrapper";
-import { loadOptinMonster } from "./services/optinMonster";
+import SubscriptionSuccess from "./components/Pages/SubscriptionSuccess";
+import MarqueeWrapper from "./components/MarqueeWrapper";
+import MarqueeWrapper2 from "./components/MarqueeWrapper2";
 const Banner = lazy(() => import("./components/Banner"));
 const EnrollmentBanner = lazy(() => import("./components/EnrollmentBanner"));
 const YourPath = lazy(() => import("./components/YourPath"));
@@ -128,6 +130,12 @@ const App = () => {
               <LoaderWrapper><Checkout showModal={showModal} setShowModal={setShowModal} /></LoaderWrapper>
             </ScrollAnimation>
           </Suspense>
+           <main className="flex items-center justify-center pt-8 mb-8 lg:-mb-10 lg:pt-24 ">
+           <div className="container-fluid w-[99.5%] mx-auto  rounded-full shadow-xl shadow-primary200  ">
+  {/* <MarqueeWrapper /> */}
+  <MarqueeWrapper2 />
+</div>
+    </main>
           <Suspense fallback={<Loader />}>
             <ScrollAnimation variants={fadeIn}>
               <LoaderWrapper><FAQ /></LoaderWrapper>

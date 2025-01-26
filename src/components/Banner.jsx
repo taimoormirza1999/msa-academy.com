@@ -1,12 +1,13 @@
 import React from 'react';
 import BannerImage from '../assets/hero_banner.png';
 import msaText from '../assets/msa_text.png';
-
+import { motion } from "framer-motion"
 import Button from './utils/Button';
 
 const Banner = () => {
   return (
-    <div className="relative  w-full 2xl:w-85 h-auto mt-20 md:mt-20 mx-auto md:w-97 mb-16 md:mb-0 lg:mb-0 xl:mb-0 max-w-[1920px]" >
+    <motion.div  whileHover={{ scale: 1.03 }}
+    transition={{ type: "spring", stiffness: 500, damping: 50 }} className="relative  w-full 2xl:w-85 h-auto mt-20 md:mt-20 mx-auto md:w-97 mb-16 md:mb-0 lg:mb-0 xl:mb-0 max-w-[1920px]" >
    <img 
   src={BannerImage} 
   alt="Banner" 
@@ -23,7 +24,7 @@ const Banner = () => {
       <Button isRounded={false}/>
 </div>
     </div>
-  </div>
+  </motion.div>
   );
 }
 
