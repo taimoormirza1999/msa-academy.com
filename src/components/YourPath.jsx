@@ -1,10 +1,12 @@
 import React from 'react';
 import YourPathImage from '../assets/path_banner.png'; // Replace with your actual image path
 import BannerTextHeading from './utils/BannerTextHeading';
+import { motion } from "framer-motion"
 
 const YourPath = () => {
   return (
-    <div
+    <motion.div  whileHover={{ scale: 1.03 }}
+    transition={{ type: "spring", stiffness: 500, damping: 50 }}
       className="relative w-full h-auto bg-cover bg-center mt-16 md:-mt-10 lg:mt-16 mx-auto md:w-99 2xl:w-85 max-w-[1920px] "
      
     >
@@ -22,7 +24,7 @@ const YourPath = () => {
         paragraph="Our courses are designed for students of all skill levels. Explore and learn from scratch with our easy-to-follow videos, allowing you to progress at your own pace."
       />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

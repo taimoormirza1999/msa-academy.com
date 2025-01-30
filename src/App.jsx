@@ -7,7 +7,8 @@ import Footer from "./components/Footer";
 import SignupForm from "./components/SignupForm";
 import ScrollAnimation from "./components/utils/ScrollAnimation";
 import LoaderWrapper from "./components/utils/LoaderWrapper";
-import { loadOptinMonster } from "./services/optinMonster";
+import SubscriptionSuccess from "./components/Pages/SubscriptionSuccess";
+import MarqueeWrapper2 from "./components/MarqueeWrapper2";
 const Banner = lazy(() => import("./components/Banner"));
 const EnrollmentBanner = lazy(() => import("./components/EnrollmentBanner"));
 const YourPath = lazy(() => import("./components/YourPath"));
@@ -128,6 +129,20 @@ const App = () => {
               <LoaderWrapper><Checkout showModal={showModal} setShowModal={setShowModal} /></LoaderWrapper>
             </ScrollAnimation>
           </Suspense>
+          <Suspense fallback={<Loader />}>
+            <ScrollAnimation>
+              <LoaderWrapper>
+              <main className="flex items-center justify-center pt-8 mb-8 lg:-mb-10 lg:pt-24 overflow-x-hidden ">
+           <div className="container-fluid w-[99.5%] max-w-[1920px]  mx-auto  rounded-full shadow-2xl px-2 py-3 shadow-primary200 radius-[8px]  ultrawide:shadow-inner-left-right " style={{"border-radius":'8px'}}>
+  {/* <MarqueeWrapper /> */}
+  <MarqueeWrapper2 />
+</div>
+    </main>
+
+              </LoaderWrapper>
+            </ScrollAnimation>
+          </Suspense>
+          
           <Suspense fallback={<Loader />}>
             <ScrollAnimation variants={fadeIn}>
               <LoaderWrapper><FAQ /></LoaderWrapper>
