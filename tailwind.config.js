@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        'ultrawide': '1920px', 
+      },
       colors: {
         primary: '#ee00a7e4',
         red: '#f02d00',
@@ -98,6 +101,9 @@ export default {
       },
       borderWidth: {
         '3': '3px',
+      },
+      boxShadow: {
+        'inner-left-right': 'inset -30px 0 15px rgba(0, 0, 0, 0.40), inset 30px 0 15px rgba(0, 0, 0, 0.40)', 
       },
       
     },
