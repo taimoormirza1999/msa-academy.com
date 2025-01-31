@@ -4,7 +4,6 @@
   font-weight: 400; 
   font-style: normal;
 }
-
 @font-face {
   font-family: 'Cocogoose-Classic-ExtraBold';
   src: url('./assets/fonts/Cocogoose-Classic-ExtraBold-trial.ttf') format('truetype');
@@ -59,4 +58,6 @@ body{
 ::selection{
   color: #ff00ff;
 }
+
+
 
