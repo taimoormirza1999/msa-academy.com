@@ -91,7 +91,7 @@ const BlogDetail = () => {
 
               {/* Blog Description */}
               <div
-                className="text-gray-100 leading-relaxed  bg-opacity-90 px-3 p-3 rounded mt-3 lg:mt-5 font-medium-kgpr  text-sm"
+                className="text-gray-100 blog_description leading-relaxed  bg-opacity-90 px-3 p-3 rounded mt-3 lg:mt-5 font-medium-kgpr  text-sm"
                 dangerouslySetInnerHTML={{
                   __html: DOMPurify.sanitize(blogData?.content),
                 }}
@@ -100,7 +100,7 @@ const BlogDetail = () => {
           </div>
 
           {/* Sidebar Area */}
-          <div className="shadow-2xl shadow-pink200/40 bg-black/35 bg-opacity-90 p-6 rounded-2xl ">
+          <div className="shadow-2xl shadow-pink200/40 bg-black/35 bg-opacity-90 p-6 rounded-2xl sidebar">
             {/* Recent Blogs */}
             <h2 className="text-xl lg:text-2xl font-semibold text-pink200 border-b-2 border-pink200 pb-2.5 mb-5 font-medium-ccm ">
               Recent Blogs
