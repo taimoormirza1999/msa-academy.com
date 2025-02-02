@@ -22,11 +22,11 @@ export default function BlogCard({blogItem}) {
             {blogItem.title}
           </h3>
        
-         <div className='mb-3'>
+         <div className='mb-3 flex flex-wrap gap-1.5'>
          {blogItem.categories?.slice(0, 3).map((category, index) => (
               <span
                 key={index}
-                className={`text-white mx-1 font-medium py-1 text-xs px-4 rounded-full font-impact-regular bg-opacity-45 shadow-2xl ${colors[index % colors.length]} ${shadows[index % shadows.length]}`}
+                className={`text-white font-medium py-1 text-xs px-4 rounded-full font-impact-regular bg-opacity-45 shadow-2xl ${colors[index % colors.length]} ${shadows[index % shadows.length]}`}
               >
                 {category}
               </span>

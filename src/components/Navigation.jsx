@@ -101,7 +101,7 @@ const Navigation = () => {
           <ul className="flex flex-col items-center space-y-4 text-white py-4">
             <li>
               <Link
-                to="enrollment"
+                to="enroll-checkout"
                 smooth={true}
                 duration={500}
                 className= "font-regular-ccm cursor-pointer hover:text-pink200"

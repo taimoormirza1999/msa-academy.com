@@ -75,11 +75,11 @@ const BlogDetail = () => {
                     day: "numeric",
                   })}
                 </span>
-                <div className="my-4">
+                <div className="mb-0 mt-3 lg:my-4 flex flex-wrap gap-1.5">
                   {blogData?.categories?.slice(0, 3).map((category, index) => (
                     <span
                       key={index}
-                      className={`text-white mx-1 font-medium py-1.5 text-xs px-8 rounded-full font-impact-regular bg-opacity-40 shadow-pink200 shadow-2xl  ${
+                      className={`text-white  font-medium py-1.5  text-[0.65rem] md:text-xs px-5 lg:px-7 rounded-full font-impact-regular bg-opacity-40 shadow-pink200 shadow-2xl  ${
                         colors[index % colors.length]
                       } `}
                     >
@@ -91,7 +91,7 @@ const BlogDetail = () => {
 
               {/* Blog Description */}
               <div
-                className="text-gray-200 text-base leading-relaxed  bg-opacity-90 px-3 p-3 rounded mt-3 lg:mt-5 font-medium-kgpr "
+                className="text-gray-100 leading-relaxed  bg-opacity-90 px-3 p-3 rounded mt-3 lg:mt-5 font-medium-kgpr  text-sm"
                 dangerouslySetInnerHTML={{
                   __html: DOMPurify.sanitize(blogData?.content),
                 }}
@@ -125,8 +125,8 @@ const BlogDetail = () => {
                     style={{ fontWeight: "900" }}
                   >
                     {" "}
-                    <p className="w-full text-sm ">{recentblogItem?.title}</p>
-                    <div className="text-right text-xs w-full pe-2 mt-3">
+                    <p className="w-full text-xs lg:text-sm font-bold lg:pb-2 ">{recentblogItem?.title}</p>
+                    <div className="text-right text-[0.55rem] lg:text-[0.69rem] w-full pe-2 mt-3">
                       {new Date(recentblogItem?.postedDate).toLocaleDateString(
                         "en-US",
                         {
