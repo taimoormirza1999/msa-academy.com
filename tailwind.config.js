@@ -111,7 +111,7 @@ export default {
 		   bounceSlow: 'bounceSlow 1.58s infinite',
 		   glowRed: 'glowRed 2s infinite',
 		   textGlow:'textGlow 1.7s infinite ease-in-out',
-		   marquee: "marquee 5s linear infinite ",
+		   marquee: "marquee 15s linear infinite ",
   
 		},
 		borderWidth: {
