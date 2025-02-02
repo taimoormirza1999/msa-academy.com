@@ -124,6 +124,22 @@ export default {
   					boxShadow: '0 0 17px 4px rgba(255, 0, 255, 0.6)'
   				}
   			},
+			  glowRed: {
+				'0%, 100%': {
+				  boxShadow: '0 0 20px 7px rgba(255, 0, 0, 0.45)',
+				},
+				'25%': {
+				  boxShadow: '0 0 35px 12px rgba(255, 0, 0, 0.55)',
+				},
+				'50%': {
+				  boxShadow: '0 0 50px 18px rgba(255, 0, 0, 0.7)',
+				},
+				'75%': {
+				  boxShadow: '0 0 35px 12px rgba(255, 0, 0, 0.55)',
+				},
+			  },
+			
+			  
   			bounceSlow: {
   				'0%, 100%': {
   					transform: 'translateY(0)',
@@ -151,8 +167,9 @@ export default {
   		},
   		animation: {
   			'spin-fast': 'spin 0.8s linear infinite',
-  			'animate-glow': 'glow 1.85s infinite ease-in-out',
-  			bounceSlow: 'bounceSlow 1.7s infinite',
+  			'animate-glow': 'glow 5.5s infinite ease-in-out',
+			 glowRed: 'glowRed 9s infinite ease-in-out',
+  			bounceSlow: 'bounceSlow 2.7s infinite ease-in-out',
   			textGlow: 'textGlow 1.7s infinite ease-in-out',
   			marquee: 'marquee 15s linear infinite '
   		},

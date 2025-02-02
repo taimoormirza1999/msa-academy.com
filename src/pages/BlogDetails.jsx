@@ -1,84 +1,159 @@
-import React, { Suspense, useEffect, useState } from 'react';
-import Navigation from '../components/Navigation';
+import React, { Suspense, useEffect, useState } from "react";
+import Navigation from "../components/Navigation";
 import BackgroundImage from "../assets/background.jpg";
-import Loader from '../components/Loader';
-import ScrollAnimation from '../components/utils/ScrollAnimation';
-import LoaderWrapper from '../components/utils/LoaderWrapper';
-import FAQ from '../components/FAQ';
-import Footer from '../components/Footer';
-import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import Loader from "../components/Loader";
+import ScrollAnimation from "../components/utils/ScrollAnimation";
+import LoaderWrapper from "../components/utils/LoaderWrapper";
+import FAQ from "../components/FAQ";
+import Footer from "../components/Footer";
+import axios from "axios";
+import { Link, useParams } from "react-router-dom";
+import DOMPurify from "dompurify";
+
 const BlogDetail = () => {
-    const { id } = useParams(); 
-    const [blogData, setBlogData] = useState(null);
-    const fetchBlogs = async () => {
-      const response = await axios.get(`http://localhost:5002/blogs/${id}`);
-      setBlogData(response.data);
+  const colors = ["bg-blue-500", "bg-pink-500", "bg-indigo-500"];
+  const shadows = ["shadow-blue-500", "shadow-pink-50", "shadow-indigo-50"];
+
+  const { id } = useParams();
+  const [blogData, setBlogData] = useState(null);
+  const [recentblogData, setRecentBlogData] = useState(null);
+  const fetchBlogs = async () => {
+    const response = await axios.get(
+      `${import.meta.env.VITE_BACKEND_ADMIN_APIS}blogs/${id}`
+    );
+    setBlogData(response.data);
   };
-    useEffect(() => { 
-        fetchBlogs(); },[]);
+  const fetchRecentBlogs = async (currentBlogId) => {
+    const response = await axios.get(
+      `${import.meta.env.VITE_BACKEND_ADMIN_APIS}blogs/recent-blogs`,
+      {
+        params: {
+          // limit: 7,
+        },
+      }
+    );
+    const filteredBlogs = response.data.filter(
+      (blog) => blog._id !== currentBlogId
+    );
+    // Limit to 6 blogs after filtering
+    setRecentBlogData(filteredBlogs);
+  };
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    fetchBlogs();
+    fetchRecentBlogs(id);
+  }, [id]);
   return (
     <div
-    className="min-h-screen mx-0 bg-cover bg-center mt-28  "
-    style={{ backgroundImage: `url(${BackgroundImage})` }}
-  >
-    <Navigation />
-      {/* NavBar Component */}
-      {/* <NavBar /> */}
+      className="min-h-screen mx-0 bg-cover bg-center mt-28  "
+      style={{ backgroundImage: `url(${BackgroundImage})` }}
+    >
+      <Navigation />
 
-      <div className="container w-[90%] mx-auto p-6 my-18 max-w-[1920px] ">
+      <div className="container w-[92%] xl:w-[80%] mx-auto lg:p-6 my-18 max-w-[1920px] ">
         {/* Main Blog Content */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Blog Content Area */}
-          <div className="lg:col-span-2 bg-black/40 bg-opacity-90 p-6 rounded-2xl shadow-xl relative">
+          <div className="shadow-2xl shadow-pink200/40 lg:col-span-2 bg-black/40 bg-opacity-90 px-2 lg:p-6 rounded-2xl  relative">
             {/* Blog Top Image */}
             <img
               src={blogData?.coverImage}
               alt="Blog Cover"
-              className="w-full h-[30rem] object-cover rounded-2xl mb-4 bg-gradient-to-t from-black via-black/50 to-transparent"
+              className="w-full border-2 border-pink200 shadow-2xl shadow-pink200/40 h-[23rem] lg:h-[30rem] object-cover rounded-2xl mb-4 bg-gradient-to-t from-black via-black/50 to-transparent"
             />
+            <div className="px-2 lg:px-0">
+              {/* Blog Title */}
+              <div className=" items-center mt-6 lg:mt-10 z-20 w-full ">
+                <h1 className="text-2xl lg:text-4xl font-bold text-pink200  font-impact-regular mb-1 ">
+                  {blogData?.title}
+                </h1>
+                <span className="justify-end text-xs pe-2 mt-10 text-white font-medium-kgpr text-right">
+                  {new Date(blogData?.postedDate).toLocaleDateString("en-US", {
+                    weekday: "long",
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </span>
+                <div className="my-4">
+                  {blogData?.categories?.slice(0, 3).map((category, index) => (
+                    <span
+                      key={index}
+                      className={`text-white mx-1 font-medium py-1.5 text-xs px-8 rounded-full font-impact-regular bg-opacity-40 shadow-pink200 shadow-2xl  ${
+                        colors[index % colors.length]
+                      } `}
+                    >
+                      {category}
+                    </span>
+                  ))}
+                </div>
+              </div>
 
-            {/* Blog Title */}
-            <h1 className="text-4xl font-bold text-pink200 mb-4 font-impact-regular absolute bottom-34 z-20 ">{blogData?.title}</h1>
-
-            {/* Blog Description */}
-            <p className="text-gray-200 text-lg leading-relaxed bg-black/30 bg-opacity-90 px-3 p-3 rounded mt-20 ">
-             {blogData?.content}
-            </p>
+              {/* Blog Description */}
+              <div
+                className="text-gray-200 text-base leading-relaxed bg-black/30 bg-opacity-90 px-3 p-3 rounded mt-3 lg:mt-5 font-medium-kgpr "
+                dangerouslySetInnerHTML={{
+                  __html: DOMPurify.sanitize(blogData?.content),
+                }}
+              ></div>
+            </div>
           </div>
 
           {/* Sidebar Area */}
-          <div className="bg-black/50 bg-opacity-90 p-6 rounded-2xl shadow-xl">
+          <div className="shadow-2xl shadow-pink200/40 bg-black/50 bg-opacity-90 p-6 rounded-2xl ">
             {/* Recent Blogs */}
-            <h2 className="text-xl font-semibold text-pink200 mb-4">Recent Blogs</h2>
-
+            <h2 className="text-xl lg:text-2xl font-semibold text-pink200 border-b-2 border-pink200 pb-2.5 mb-5 font-medium-ccm ">
+              Recent Blogs
+            </h2>{" "}
             <ul className="space-y-4">
-              {Array(5)
-                .fill(0)
-                .map((_, index) => (
-                  <li key={index}>
-                    <a
-                      href="#"
-                      className="text-white  hover:underline hover:text-blue-700"
-                    >
-                      Dummy Blog Title {index + 1}
-                    </a>
-                  </li>
-                ))}
+              {" "}
+              {recentblogData?.map((recentblogItem, index) => (
+                <Link
+                  to={`/blog/${recentblogItem._id}`}
+                  key={index}
+                  className="flex items-center space-x-4 shadow-xl shadow-pink200/25 rounded-[13px] p-2.5 mb-5 border-[1.5px] border-pink200"
+                >
+                  {" "}
+                  <img
+                    src={recentblogItem?.coverImage}
+                    alt={`Blog ${index + 1} thumbnail`}
+                    className="border-[1.5px] border-pink200 w-20 h-20 object-cover rounded-md"
+                  />{" "}
+                  <a
+                    href="#"
+                    className="w-full text-white text-base hover:underline hover:text-pink200 font-medium-kgpr"
+                    style={{ fontWeight: "900" }}
+                  >
+                    {" "}
+                    <p className="w-full text-sm ">{recentblogItem?.title}</p>
+                    <div className="text-right text-xs w-full pe-2 mt-3">
+                      {new Date(recentblogItem?.postedDate).toLocaleDateString(
+                        "en-US",
+                        {
+                          weekday: "long",
+                          year: "numeric",
+                          month: "long",
+                          day: "numeric",
+                        }
+                      )}
+                    </div>
+                  </a>{" "}
+                </Link>
+              ))}{" "}
             </ul>
           </div>
         </div>
       </div>
       <Suspense fallback={<Loader />}>
-            <ScrollAnimation >
-              <LoaderWrapper>
-                <FAQ />
-              </LoaderWrapper>
-            </ScrollAnimation>
-          </Suspense>
+        <ScrollAnimation>
           <LoaderWrapper>
-            <Footer />
+            <FAQ />
           </LoaderWrapper>
+        </ScrollAnimation>
+      </Suspense>
+      <LoaderWrapper>
+        <Footer />
+      </LoaderWrapper>
     </div>
   );
 };

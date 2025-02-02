@@ -10,7 +10,7 @@ import LoaderWrapper from "../components/utils/LoaderWrapper";
 import SubscriptionSuccess from "../components/Pages/SubscriptionSuccess";
 import MarqueeWrapper2 from "../components/MarqueeWrapper2";
 
-import MultipleItems from "../components/blog/BlogCards";
+import BlogCards from "../components/blog/BlogCards";
 const Banner = lazy(() => import("../components/Banner"));
 const EnrollmentBanner = lazy(() => import("../components/EnrollmentBanner"));
 const YourPath = lazy(() => import("../components/YourPath"));
@@ -159,7 +159,7 @@ const Home = () => {
               </LoaderWrapper>
             </ScrollAnimation>
           </Suspense>
-       <MultipleItems/>
+       <BlogCards/>
           <Suspense fallback={<Loader />}>
             <ScrollAnimation variants={fadeIn}>
               <LoaderWrapper>

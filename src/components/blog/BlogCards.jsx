@@ -7,7 +7,7 @@ import axios from "axios";
 function MultipleItems() {
     const [blogData, setBlogData] = useState(null);
     const fetchBlogs = async () => {
-      const response = await axios.get(`http://localhost:5002/blogs`);
+      const response = await axios.get(`${import.meta.env.VITE_BACKEND_ADMIN_APIS}blogs`);
       setBlogData(response.data);
   };
     useEffect(() => { fetchBlogs(); },[]);
@@ -50,7 +50,7 @@ function MultipleItems() {
       ]
   };
   return (
-    <div className="slider-container mt-8 lg:mt-28 ">
+    <div className="slider-container mt-8 mb-8 lg:mb-0 lg:mt-28 ">
       <Slider {...settings}>
       {blogData?.map((blogItem, key) => (
        <BlogCard blogItem={blogItem} key={key} />
