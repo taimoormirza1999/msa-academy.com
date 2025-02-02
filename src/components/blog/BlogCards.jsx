@@ -6,7 +6,7 @@ import BlogCard from "../ui/BlogCard";
 import axios from "axios";
 const CustomNextArrow = ({ onClick }) => (
   <button
-    className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white p-2 rounded-full shadow-md"
+    className="absolute right-5 shadow-pink200/40 top-1/2 -translate-y-1/2 z-10 g-black/55 border-[1.5px] border-pink200 text-pink200 p-3 rounded-full shadow-xl"
     onClick={onClick}
   >
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
@@ -17,7 +17,7 @@ const CustomNextArrow = ({ onClick }) => (
 
 const CustomPrevArrow = ({ onClick }) => (
   <button
-    className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white p-2 rounded-full shadow-md"
+    className="absolute left-5 shadow-pink200/40 top-1/2 -translate-y-1/2 z-10 bg-black/55 border-[1.5px] border-pink200 text-pink200 p-3 rounded-full shadow-xl"
     onClick={onClick}
   >
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">

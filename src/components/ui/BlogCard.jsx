@@ -32,7 +32,7 @@ export default function BlogCard({blogItem}) {
               </span>
             ))}
          </div>
-          <a href={`/blog/${blogItem._id}`} className="text-pink200 mt-2 inline-block border-2 border-pink200 px-4 p-1 rounded-full  text-sm">
+          <a href={`/blog/${blogItem._id}`} className="text-gray-50 mt-2 inline-block border-[1.2px] shadow-lg shadow-pink200/35 border-pink200 px-4 p-1 rounded-full  text-xs">
             Read More
           </a>
           </div>
