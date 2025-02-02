@@ -20,7 +20,7 @@ const Banner = () => {
   alt="MSAAcademy-text" 
   className="-mt-7 -ml-1 2xl: w-40 h-auto shadow-2xl object-contain mb-3 md:hidden shadow-pink200/65"
 />
-<div className='animate-bounce mt-8 md:mt-auto'>
+<div className='animate-bounceSlow mt-8 md:mt-auto'>
       <Button isRounded={false}/>
 </div>
     </div>

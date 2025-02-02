@@ -12,7 +12,7 @@ import DOMPurify from "dompurify";
 
 const BlogDetail = () => {
   const colors = ["bg-blue-500", "bg-pink-500", "bg-indigo-500"];
-  const shadows = ["shadow-blue-500", "shadow-pink-50", "shadow-indigo-50"];
+  const myshadows = ["shadow-blue-500", "shadow-pink-50", "shadow-indigo-50"];
 
   const { id } = useParams();
   const [blogData, setBlogData] = useState(null);
@@ -54,7 +54,7 @@ const BlogDetail = () => {
         {/* Main Blog Content */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Blog Content Area */}
-          <div className="shadow-2xl shadow-pink200/40 lg:col-span-2 bg-black/40 bg-opacity-90 px-2 lg:p-6 rounded-2xl  relative">
+          <div className="shadow-2xl shadow-pink200/40 lg:col-span-2 bg-black/35 bg-opacity-90 px-2 lg:p-6 rounded-2xl  relative">
             {/* Blog Top Image */}
             <img
               src={blogData?.coverImage}
@@ -91,7 +91,7 @@ const BlogDetail = () => {
 
               {/* Blog Description */}
               <div
-                className="text-gray-200 text-base leading-relaxed bg-black/30 bg-opacity-90 px-3 p-3 rounded mt-3 lg:mt-5 font-medium-kgpr "
+                className="text-gray-200 text-base leading-relaxed  bg-opacity-90 px-3 p-3 rounded mt-3 lg:mt-5 font-medium-kgpr "
                 dangerouslySetInnerHTML={{
                   __html: DOMPurify.sanitize(blogData?.content),
                 }}
@@ -100,28 +100,28 @@ const BlogDetail = () => {
           </div>
 
           {/* Sidebar Area */}
-          <div className="shadow-2xl shadow-pink200/40 bg-black/50 bg-opacity-90 p-6 rounded-2xl ">
+          <div className="shadow-2xl shadow-pink200/40 bg-black/35 bg-opacity-90 p-6 rounded-2xl ">
             {/* Recent Blogs */}
             <h2 className="text-xl lg:text-2xl font-semibold text-pink200 border-b-2 border-pink200 pb-2.5 mb-5 font-medium-ccm ">
               Recent Blogs
             </h2>{" "}
             <ul className="space-y-4">
               {" "}
-              {recentblogData?.map((recentblogItem, index) => (
+              {recentblogData?.reverse().map((recentblogItem, index) => (
                 <Link
                   to={`/blog/${recentblogItem._id}`}
                   key={index}
-                  className="flex items-center space-x-4 shadow-xl shadow-pink200/25 rounded-[13px] p-2.5 mb-5 border-[1.5px] border-pink200"
+                  className="flex items-center space-x-4 shadow-xl  hover:scale-[1.03] transition-transform duration-300 shadow-pink200/25 rounded-[13px] p-2.5 mb-5 border-[1.5px] border-pink200"
                 >
                   {" "}
                   <img
                     src={recentblogItem?.coverImage}
                     alt={`Blog ${index + 1} thumbnail`}
-                    className="border-[1.5px] border-pink200 w-20 h-20 object-cover rounded-md"
+                    className="border-[1.5px]  border-pink200/70 shadow shadow-pink200/30 w-20 h-20 object-cover rounded-md"
                   />{" "}
                   <a
                     href="#"
-                    className="w-full text-white text-base hover:underline hover:text-pink200 font-medium-kgpr"
+                    className="w-full text-white text-base font-medium-kgpr"
                     style={{ fontWeight: "900" }}
                   >
                     {" "}

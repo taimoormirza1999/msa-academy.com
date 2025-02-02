@@ -25,7 +25,7 @@ const Drawing = () => {
 JOIN US TO UNLEASH THE ARTISTIC 
 TALENT WHITHIN YOU!"
       />
-        <div className='mt-2 mb-3 lg:mt-[30pt] animate-bounce'>
+        <div className='mt-2 mb-3 lg:mt-[30pt] animate-bounceSlow'>
       <Button textSize="text-sm"/>
       </div>
 
