@@ -17,6 +17,7 @@ const BlogDetail = () => {
   const { id } = useParams();
   const [blogData, setBlogData] = useState(null);
   const [recentblogData, setRecentBlogData] = useState(null);
+  const [loading, setLoading] = useState(true);
   const fetchBlogs = async () => {
     const response = await axios.get(
       `${import.meta.env.VITE_BACKEND_ADMIN_APIS}blogs/${id}`
@@ -40,9 +41,18 @@ const BlogDetail = () => {
   };
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-    fetchBlogs();
-    fetchRecentBlogs(id);
+
+    const fetchData = async () => {
+      await Promise.all([fetchBlogs(), fetchRecentBlogs(id)]);
+      setLoading(false);
+    };
+
+    fetchData();
   }, [id]);
+
+  if (loading) {
+    return <Loader />;
+  }
   return (
     <div
       className="min-h-screen mx-0 bg-cover bg-center mt-28  "
@@ -54,12 +64,12 @@ const BlogDetail = () => {
         {/* Main Blog Content */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Blog Content Area */}
-          <div className="shadow-2xl shadow-pink200/40 lg:col-span-2 bg-black/35 bg-opacity-90 px-2 lg:p-6 rounded-2xl  relative">
+          <div className="shadow-2xl shadow-pink200/40 lg:col-span-2 bg-black/35 bg-opacity-90 px-2 lg:p-6 rounded-2xl relative">
             {/* Blog Top Image */}
             <img
               src={blogData?.coverImage}
               alt="Blog Cover"
-              className="w-full border-2 border-pink200 shadow-2xl shadow-pink200/40 h-[23rem] lg:h-[30rem] object-cover rounded-2xl mb-4 bg-gradient-to-t from-black via-black/50 to-transparent"
+              className="w-full border-2 border-pink200 shadow-2xl shadow-pink200/40 h-[23rem] lg:h-[30rem] xl:h-[50vh] object-cover rounded-2xl mb-4 bg-gradient-to-t from-black via-black/50 to-transparent"
             />
             <div className="px-2 lg:px-0">
               {/* Blog Title */}
