@@ -133,7 +133,7 @@ const MSALearningSection = () => {
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center md:flex-row">
               {/* List Section */}
-              <div className="order-2 md:order-1 z-50">
+              <div className="order-2 md:order-1 ">
                 <h3 className="text-2xl text-center lg:text-left lg:text-4xl uppercase text-white font-bold mb-8 font-medium-fgm z-50">
                   The MSA Learning Experience
                 </h3>

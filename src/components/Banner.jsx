@@ -33,21 +33,20 @@ const Banner = () => {
       }}
       whileHover={{ scale: 1.02 }}
       transition={{ type: 'spring', stiffness: 200, damping: 20 }}
-      className="relative w-full 2xl:w-85 h-auto mt-20 md:mt-20 mx-auto md:w-97 mb-16 md:mb-0 lg:mb-0 xl:mb-0 max-w-[1920px]"
+      className="relative w-full 2xl:w-85 h-auto mt-16 md:mt-20 pt-10 mx-auto md:w-97 mb-16 md:mb-0 lg:mb-0 xl:mb-0 max-w-[1920px]"
     >
       {/* Parallax Background Image */}
       <motion.img
         src={BannerImage}
         alt="Banner"
         style={{ y: parallaxY }}
-        className="w-full mx-auto lg:w-97 h-[47vh] sm:h-[60vh] lg:h-[80vh] object-cover object-[25%_30%] rounded-lg scale-105"
+        className="w-full mx-auto lg:w-97 h-[44vh] sm:h-[60vh] lg:h-[80vh] object-cover object-[25%_30%] rounded-lg scale-105"
       />
 
       {/* Parallax Foreground Content */}
       <motion.div
-        style={{ y: textParallaxY }}
-        className="absolute top-10 md:right-16 lg:right-28 md:left-auto left-0 right-0 z-30 mx-auto w-max"
-        style={{ top: 'calc(100% - 35%)' }}
+        style={{ y: textParallaxY, top: 'calc(100% - 35%)' }}
+        className="absolute top-10 md:right-16 lg:right-28 md:left-auto left-0 right-0 z-10 mx-auto w-max"
       >
         <img
           src={msaText}

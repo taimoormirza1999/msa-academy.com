@@ -309,7 +309,7 @@ body{
   overflow-y:auto;
 }
 nav.bg-black.fixed.top-0.left-0.right-0.z-50.shadow-lg.py-2\.5.md\:py-3{
-  z-index: 100;
+  z-index: 50;
 }
 .blog_description h1 {
   display: none; 
