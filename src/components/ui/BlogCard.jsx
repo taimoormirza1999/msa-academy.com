@@ -11,14 +11,14 @@ export default function BlogCard({blogItem}) {
       duration: 0.4,
       ease: "easeInOut",
       // delay:2,
-    },}} className="relative text-white m-1 lg:m-2 h-[50vh] border-2 border-pink200 rounded-[3rem]" >
+    },}} className="relative text-white m-1 lg:m-2 h-[50vh] border-2 border-pink200 rounded-[3rem] z-20 overflow-hidden bg-amber-500" >
       {/* Image */}
-      <Link to={`/blog/${blogItem._id}`} className="relative cursor-pointer ">
+      <Link to={`/blog/${blogItem._id}`} className="relative cursor-pointer w-full max-w-full bg-slate-500 ">
         <img
        
           src={blogItem?.coverImage} 
           alt="Blog Post"
-          className="w-full object-cover rounded-[3rem] h-[50vh]"
+          className="w-full object-cover  h-[50vh]"
         /> 
         {/* Title & Read More Overlay */}
         <div className="bg-green-500/70 absolute bottom-0 max-w-full left-0 w-full h-[50vh] rounded-[3rem] p-4 bg-gradient-to-t from-black via-black/10 to-black/20 
