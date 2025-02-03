@@ -4,3 +4,42 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Ensure slider navigation buttons are visible and positioned correctly */
+.slick-prev, .slick-next {
+  position: absolute;
+  top: 50%;  /* Center vertically */
+  right: 10px;  /* Position buttons on the right */
+  z-index: 10;
+  background-color: #fff;  /* Button background */
+  border-radius: 50%;  /* Make the button round */
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slick-prev {
+  left: auto;  /* Disable default left positioning */
+  right: 50px;  /* Adjust position from the right side */
+}
+
+.slick-next {
+  right: 10px;  /* Right button, adjust position */
+}
+
+.slick-prev:before, .slick-next:before {
+  font-size: 20px;  /* Increase the size of the arrows */
+  color: #000;  /* Arrow color */
+}
+
+.slick-prev:hover, .slick-next:hover {
+  background-color: #ddd;  /* Change the background on hover */
+}
+.slider-container {
+  position: relative;  /* Ensure the navigation buttons are positioned relative to the slider */
+}
+
+.slick-dots li button:before {
+  color:pink!important;
+}

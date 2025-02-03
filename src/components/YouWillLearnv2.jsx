@@ -1,7 +1,6 @@
-import React from "react"
-import { motion } from "framer-motion"
-import { Link } from "react-scroll"
-// import Image from "next/image"
+import React from "react";
+import { motion } from "framer-motion";
+import { Link } from "react-scroll";
 
 const FeatureCard = ({ title, description, icon }) => (
   <motion.div
@@ -19,7 +18,7 @@ const FeatureCard = ({ title, description, icon }) => (
     <h3 className="text-lg lg:text-xl font-bold text-white mb-2 text-center font-medium-fgm">{title}</h3>
     <p className="text-gray-50 text-center font-regular-ccm">{description}</p>
   </motion.div>
-)
+);
 
 const MSALearningSection = () => {
   const containerVariants = {
@@ -30,7 +29,7 @@ const MSALearningSection = () => {
         staggerChildren: 0.2,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -38,22 +37,28 @@ const MSALearningSection = () => {
       y: 0,
       opacity: 1,
     },
-  }
+  };
 
   return (
-    <section className=" ">
-      <div className=" mx-auto px-4">
+    <section className="py-16">
+      <div className="container mx-auto px-4">
         <motion.div initial="hidden" animate="visible" variants={containerVariants}>
-          <motion.h2 className="text-[1.7rem] lg:text-[3.2rem]   font-ebold-ccm uppercase text-white font-bold text-center mb-5 lg:mb-8 animate-textGlow " variants={itemVariants}>
+          <motion.h2
+            className="text-[1.7rem] lg:text-[3.2rem] font-ebold-ccm uppercase text-white font-bold text-center mb-5 lg:mb-8 animate-textGlow"
+            variants={itemVariants}
+          >
             Learn to Create Like MSA
           </motion.h2>
-          <motion.p className="text-base text-gray-50 text-center mb-12 max-w-3xl mx-auto font-regular-ccm" variants={itemVariants}>
+          <motion.p
+            className="text-base text-gray-50 text-center mb-12 max-w-3xl mx-auto font-regular-ccm"
+            variants={itemVariants}
+          >
             Embark on a transformative journey to master the art of content creation, animation, and storytelling. Our
             curriculum is designed to empower you with the skills and techniques that make MSA's content truly
             exceptional.
           </motion.p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16  ">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             <motion.div variants={itemVariants}>
               <FeatureCard
                 title="Master Storytelling"
@@ -123,101 +128,92 @@ const MSALearningSection = () => {
           </div>
 
           <motion.div
-  className="border-2  border-pink200 shadow-pink200/40 p-5 lg:p-8 shadow-2xl overflow-hidden rounded-[3rem]"
-  variants={itemVariants}
->
- 
-<div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center md:flex-row">
-
-    {/* List Section */}
-    <div className="order-2 md:order-1 z-50">
-    <h3 className=" text-2xl text-center lg:text-left lg:text-4xl uppercase text-white font-bold mb-8 font-medium-fgm z-50">
-    The MSA Learning Experience
-  </h3>
-      <ul className="space-y-6">
-        {[
-          "Hands-on projects mirroring real MSA productions",
-          "Personalized feedback from industry professionals",
-          "Access to cutting-edge tools and software",
-          "Collaborative workshops with fellow creatives",
-          "Insights into MSA's creative process and workflow",
-        ].map((item, index) => (
-          <motion.li
-            key={index}
-            className="flex items-start border border-pink200 p-2 py-3 rounded-[1rem] bg-gradient-to-tr  from-white/15"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: index * 0.1 }}
+            className="border-2 border-pink200 shadow-pink200/40 p-5 lg:p-8 shadow-2xl overflow-hidden rounded-[3rem]"
+            variants={itemVariants}
           >
-            {/* Check Icon */}
-            <svg
-              className="w-6 h-w-6 lg:w-8 lg:h-8 text-white mr-3 flex-shrink-0 bg-gradient-to-t  bg-pink200  shadow-xl shadow-black/40 from-black/30 via-purple/30 to-pink200/30 rounded-full p-1 font-medium-fgm "
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M5 13l4 4L19 7"
-              />
-            </svg>
-            {/* Text */}
-            <span className="text-gray-100 text-sm lg:text-lg leading-relaxed font-medium-fgm">
-              {item}
-            </span>
-          </motion.li>
-          
-        ))}
-      </ul>
-      <motion.div className="mt-0 flex flex-row justify-center lg:justify-start" variants={itemVariants}>
-      <Link
-      smooth={true}
-      duration={800}
-              to='enroll-checkout' 
-              className="cursor-pointer animate-animate-glow  lg:text-[1.0956rem] mt-12 mb-7 border-[1.7px] bg-opacity-10  text-white border-pink200 hover:shadow-pink200 shadow-pink200/40 pt-[15px]  pb-[15px] px-[32.5px] rounded-[19px] shadow-xl font-medium-fgm uppercase"
-            >
-              Start Your MSA Journey
-            </Link>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center md:flex-row">
+              {/* List Section */}
+              <div className="order-2 md:order-1 ">
+                <h3 className="text-2xl text-center lg:text-left lg:text-4xl uppercase text-white font-bold mb-8 font-medium-fgm z-50">
+                  The MSA Learning Experience
+                </h3>
+                <ul className="space-y-6">
+                  {[
+                    "Hands-on projects mirroring real MSA productions",
+                    "Personalized feedback from industry professionals",
+                    "Access to cutting-edge tools and software",
+                    "Collaborative workshops with fellow creatives",
+                    "Insights into MSA's creative process and workflow",
+                  ].map((item, index) => (
+                    <motion.li
+                      key={index}
+                      className="flex items-start border border-pink200 p-2 py-3 rounded-[1rem] bg-gradient-to-tr from-white/15"
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                    >
+                      {/* Check Icon */}
+                      <svg
+                        className="w-6 h-6 lg:w-8 lg:h-8 text-white mr-3 flex-shrink-0 bg-gradient-to-t bg-pink200 shadow-xl shadow-black/40 from-black/30 via-purple/30 to-pink200/30 rounded-full p-1 font-medium-fgm"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      {/* Text */}
+                      <span className="text-gray-100 text-sm lg:text-lg leading-relaxed font-medium-fgm">
+                        {item}
+                      </span>
+                    </motion.li>
+                  ))}
+                </ul>
+                <motion.div className="mt-0 flex flex-row justify-center lg:justify-start" variants={itemVariants}>
+                  <Link
+                    smooth={true}
+                    duration={800}
+                    to="enroll-checkout"
+                    className="cursor-pointer animate-animate-glow lg:text-[1.0956rem] mt-12 mb-7 border-[1.7px] bg-opacity-10 text-white border-pink200 hover:shadow-pink200 shadow-pink200/40 pt-[15px] pb-[15px] px-[32.5px] rounded-[19px] shadow-xl font-medium-fgm uppercase"
+                  >
+                    Start Your MSA Journey
+                  </Link>
+                </motion.div>
+              </div>
+
+              {/* Image Section */}
+              <div className="relative order-1 md:order-2">
+                {/* Image */}
+                <img
+                  src="https://yt3.ggpht.com/rHv7rFC9EFL8qUBNCnKP_JofD4-hVcaeYZMXeMACRaA3D7Q-wBAAjzmx9KRIpamG2vHxVNrORL1-AyI=s1600-rw-nd-v1"
+                  alt="MSA Learning Experience"
+                  className="rounded-xl w-full lg:w-[90%] object-contain shadow-md lg:border-3 border-pink200 relative z-10 mt-4 lg:mt-0"
+                />
+                {/* Blob Animation */}
+                <motion.div
+                  className="absolute inset-0 -z-0"
+                  initial={{ scale: 1.15 }}
+                  animate={{ scale: [1.15, 1.4, 1.15], borderRadius: ["30% 70%", "50% 50%", "70% 30%"] }}
+                  transition={{
+                    duration: 6,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                >
+                  <div className="w-full h-full bg-gradient-to-tl from-pink200 to-purple blur-2xl opacity-60 rounded-full" />
+                </motion.div>
+              </div>
+            </div>
           </motion.div>
-    </div>
-
-    {/* Image Section */}
-    <div className="relative order-1 md:order-2">
-  {/* Image */}
-  <img
-    src="https://yt3.ggpht.com/rHv7rFC9EFL8qUBNCnKP_JofD4-hVcaeYZMXeMACRaA3D7Q-wBAAjzmx9KRIpamG2vHxVNrORL1-AyI=s1600-rw-nd-v1"
-    alt="MSA Learning Experience"
-    className="rounded-xl w-full lg:w-[90%] object-contain shadow-md lg:border-3 border-pink200 relative z-10 mt-4 lg:mt-0"
-  />
-  
-  {/* Blob Animation */}
-  <motion.div
-    className="absolute inset-0 -z-0"
-    initial={{ scale: 1.15 }}
-    animate={{ scale: [1.15, 1.4, 1.15], borderRadius: ['30% 70%', '50% 50%', '70% 30%'] }}
-    transition={{
-      duration: 6,
-      repeat: Infinity,
-      ease: 'easeInOut',
-    }}
-  >
-    <div
-      className="w-full h-full bg-gradient-to-tl from-pink200 to-purple blur-2xl opacity-60 rounded-full"
-    />
-  </motion.div>
-</div>
-
-  </div>
-</motion.div>
-
         </motion.div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default MSALearningSection
-
+export default MSALearningSection;

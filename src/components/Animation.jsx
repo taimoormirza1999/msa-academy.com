@@ -7,7 +7,7 @@ import { motion } from "framer-motion"
 const Animation = () => {
   return (
     <motion.div  
-    transition={{ type: "spring", stiffness: 500, damping: 50 }}
+  
       className="relative w-full md:w-99 h-auto bg-cover bg-center -mt-10 md:mb-10 lg:mb-60 xl:mb-10 lg:-mt-36 xl:-mt-56 lg:w-full 2xl:w-85 mx-auto max-w-[1920px]"
      id='animation-course'
     >
@@ -18,7 +18,7 @@ const Animation = () => {
      className="w-full md:w-98 h-[38vh] sm:h-[60vh] md:h-full lg:h-full  object-cover object-[20%_30%]"
     />
          </div>
-      <div className="bg-black/40 lg:bg-transparent rounded-xl shadow-xl shadow-pink200/30 lg:shadow-none lg:rounded-none mx-auto lg:absolute top-20 right-10 p-8 text-white w-95 md:w-85 lg:w-[54%] flex flex-col justify-end lg:justify-center md:mt-5 lg:me-5">
+      <motion.div className="bg-black/40 lg:bg-transparent rounded-xl shadow-xl shadow-pink200/30 lg:shadow-none lg:rounded-none mx-auto lg:absolute top-20 right-10 p-8 text-white w-95 md:w-85 lg:w-[54%] flex flex-col justify-end lg:justify-center md:mt-5 lg:me-5">
        
         <BannerTextHeading
         paragraphspecificwidth={true}
@@ -27,11 +27,11 @@ const Animation = () => {
 TO MAKE THINGS AND CHARACTERS 
 MOVE? YOU’RE IN THE RIGHT PLACE!"
       />
-      <div className='mt-[15pt] lg:mt-[30pt] mb-3 animate-bounce'>
+      <motion.div initial={{opacity:0}}  whileInView={{ opacity: 1 }} transition={{duration:0.8, delay:0.55}} className='mt-[15pt] lg:mt-[30pt] mb-3 animate-bounceSlow'>
       <Button textSize="text-sm"/>
-      </div>
+      </motion.div >
         <VideoSection/>
-      </div>
+      </motion.div>
     </motion.div>
   );
 };

@@ -86,7 +86,7 @@ const SignupForm = React.memo(() => {
 
   return showPopup ? (
     <div className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50">
-      <div className="w-[95%] lg:w-full bg-[#111] rounded-lg max-w-md shadow-2xl shadow-pink200/30 lg:shadow-pink200/20">
+      <div className="w-[90%] lg:w-full bg-[#111] rounded-lg max-w-md shadow-2xl shadow-pink200/30 lg:shadow-pink200/20">
         <img
           src="https://mcusercontent.com/e1f1a4e7afa29f4705570bedf/images/e212dfae-95cb-0a7c-afb0-47948cedbf32.png"
           alt="Newsletter"
