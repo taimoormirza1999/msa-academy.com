@@ -8,7 +8,7 @@ import { motion } from 'framer-motion';
 
 const CustomNextArrow = ({ onClick }) => (
   <button
-    className="absolute right-28 lg:right-2 shadow-pink200/40 -bottom-20 lg:top-auto lg:-bottom-24 -translate-y-1/2 z-10 bg-black/25 lg:bg-black/45 border-[1.5px] border-pink200 text-pink200 p-1 lg:p-4 rounded-full shadow-xl"
+    className="absolute right-[35%] lg:right-2 shadow-pink200/40 -bottom-20 lg:top-auto lg:-bottom-24 -translate-y-1/2 z-10 bg-black/25 lg:bg-black/45 border-[1.5px] border-pink200 text-pink200 p-2 lg:p-4 rounded-full shadow-xl"
     onClick={onClick}
   >
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
@@ -19,7 +19,7 @@ const CustomNextArrow = ({ onClick }) => (
 
 const CustomPrevArrow = ({ onClick }) => (
   <button
-    className="absolute  right-1/2 lg:left-auto lg:right-20 shadow-pink200/40 -bottom-20 lg:top-auto lg:-bottom-24 -translate-y-1/2 z-10 bg-black/25 lg:bg-black/45 border-[1.5px] border-pink200 text-pink200 p-1 lg:p-4 rounded-full shadow-xl"
+    className="absolute  right-1/2 lg:left-auto lg:right-20 shadow-pink200/40 -bottom-20 lg:top-auto lg:-bottom-24 -translate-y-1/2 z-10 bg-black/25 lg:bg-black/45 border-[1.5px] border-pink200 text-pink200 p-2 lg:p-4 rounded-full shadow-xl"
     onClick={onClick}
   >
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
