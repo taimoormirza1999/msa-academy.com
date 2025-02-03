@@ -147,7 +147,7 @@ const Home = () => {
           <Suspense fallback={<Loader />}>
             <ScrollAnimation>
               <LoaderWrapper>
-                <main className="flex items-center justify-center pt-8 mb-8 lg:-mb-10 lg:pt-24 overflow-x-hidden ">
+                <main className="flex items-center justify-center pt-5 mb-32 lg:-mb-10 lg:pt-24 overflow-x-hidden ">
                   <div
                     className="container-fluid w-[99.5%] max-w-[1920px]  mx-auto  rounded-full shadow-2xl px-2 py-3 shadow-primary200 radius-[8px]  ultrawide:shadow-inner-left-right "
                     style={{ "border-radius": "8px" }}

@@ -62,7 +62,7 @@ function Contact() {
         </div>
 
         {/* Privacy Policy Button */}
-        <div className="mb-5 mt-4">
+        <div className="mb-5 mt-4 md:mb-7 lg:mb-0">
           <button className="md:mx-4 text-lg text-white border-2 border-white rounded-2xl py-2 px-6 hover:bg-white hover:text-gray-800 transition duration-300 shadow-xl shadow-pink200/35">
             Privacy Policy
           </button>

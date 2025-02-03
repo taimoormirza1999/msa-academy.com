@@ -40,7 +40,7 @@ const MSALearningSection = () => {
   };
 
   return (
-    <section className="py-16">
+    <section className="py-16 md:pb-8 md:pt-5">
       <div className="container mx-auto px-4">
         <motion.div initial="hidden" animate="visible" variants={containerVariants}>
           <motion.h2
@@ -58,7 +58,7 @@ const MSALearningSection = () => {
             exceptional.
           </motion.p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8 md:gap-5 lg:gap-8 mb-16">
             <motion.div variants={itemVariants}>
               <FeatureCard
                 title="Master Storytelling"
@@ -131,7 +131,7 @@ const MSALearningSection = () => {
             className="border-2 border-pink200 shadow-pink200/40 p-5 lg:p-8 shadow-2xl overflow-hidden rounded-[3rem]"
             variants={itemVariants}
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center md:flex-row">
+            <div className="grid grid-cols-1 md:grid-cols-1 lg:md:grid-cols-2 gap-5 lg:gap-8 items-center md:flex-row">
               {/* List Section */}
               <div className="order-2 md:order-1 ">
                 <h3 className="text-2xl text-center lg:text-left lg:text-4xl uppercase text-white font-bold mb-8 font-medium-fgm z-50">

@@ -22,14 +22,14 @@ const Banner = () => {
      
       whileHover={{ scale: 1.02 }}
       transition={{ type: 'spring', stiffness: 200, damping: 20 }}
-      className="relative w-full 2xl:w-85 h-auto mt-16 md:mt-20 pt-10 mx-auto md:w-97 mb-16 md:mb-0 lg:mb-20 xl:mb-0 max-w-[1920px] pb-10"
+      className="relative w-full 2xl:w-85 h-auto mt-16 md:mt-20 pt-10 mx-auto md:w-97 mb-16 md:mb-10 lg:mb-20 xl:mb-0 max-w-[1920px] pb-10"
     >
       {/* Parallax Background Image */}
       <motion.img
         src={BannerImage}
         alt="Banner"
         style={{ y: parallaxY }}
-        className="w-full mx-auto lg:w-97 h-[40vh] sm:h-[60vh] lg:h-full object-cover object-[25%_30%] rounded-lg scale-105 banner_img"
+        className="w-full mx-auto lg:w-97 h-[40vh] sm:h-[60vh] md:h-[34vh] lg:h-full object-cover object-[25%_30%] rounded-lg scale-105 banner_img"
       />
 
       {/* Parallax Foreground Content */}
