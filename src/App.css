@@ -315,3 +315,6 @@ body{
   max-height: calc(100vh - 90rem); 
   overflow-y:auto;
 }
+nav.bg-black.fixed.top-0.left-0.right-0.z-50.shadow-lg.py-2\.5.md\:py-3.z-100{
+  z-index: 100000;
+}

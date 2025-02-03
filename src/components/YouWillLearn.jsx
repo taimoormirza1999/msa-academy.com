@@ -68,7 +68,7 @@ const YouWillLearn = () => {
 //       </div>
 //     </div>
 //   </div>
-<div className=' mx-auto p-0 lg:py-8 lg:px-6 md:p-10 rounded-primary w-[97%] md:w-85  max-w-[1920px]'>
+<div className=' mx-auto p-0 lg:py-8 lg:px-6 md:p-10 rounded-primary w-[97%] md:w-85 max-w-[1920px]'>
   <MSALearningSection/>
   </div>
   );

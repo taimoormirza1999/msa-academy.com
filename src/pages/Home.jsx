@@ -89,21 +89,21 @@ const Home = () => {
             </ScrollAnimation>
           </Suspense>
           <Suspense fallback={<Loader />}>
-            <ScrollAnimation variants={slideIn("bottom")}>
+            <ScrollAnimation variants={fadeIn}>
               <LoaderWrapper>
                 <YourPath />
               </LoaderWrapper>
             </ScrollAnimation>
           </Suspense>
           <Suspense fallback={<Loader />}>
-            <ScrollAnimation variants={slideIn("bottom")}>
+            <ScrollAnimation variants={fadeIn}>
               <LoaderWrapper>
                 <Animation />
               </LoaderWrapper>
             </ScrollAnimation>
           </Suspense>
           <Suspense fallback={<Loader />}>
-            <ScrollAnimation variants={slideIn("bottom")}>
+            <ScrollAnimation variants={fadeIn}>
               <LoaderWrapper>
                 <Drawing />
               </LoaderWrapper>

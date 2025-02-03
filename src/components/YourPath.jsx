@@ -5,8 +5,10 @@ import { motion } from "framer-motion"
 
 const YourPath = () => {
   return (
-    <motion.div  whileHover={{ scale: 1.03 }}
-    transition={{ type: "spring", stiffness: 500, damping: 50 }}
+    <motion.div 
+    initial={{opacity:0}} whileInView={{opacity:1,transition:{duration:1.5, ease: "easeInOut",}}} 
+  
+    // transition={{ type: "spring", }}
       className="relative w-full h-auto bg-cover bg-center mt-16 md:-mt-10 lg:mt-16 mx-auto md:w-99 2xl:w-85 max-w-[1920px] "
      
     >

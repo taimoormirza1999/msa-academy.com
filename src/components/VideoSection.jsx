@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaPlay } from 'react-icons/fa'
+import { motion } from 'framer-motion';
 const VideoSection = ({videoUrl, imageUrl}) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   // const [videoUrl, setVideoUrl] = useState(videoUrl);
@@ -26,7 +27,9 @@ const VideoSection = ({videoUrl, imageUrl}) => {
     className="w-full h-full object-cover rounded-xl shadow-xl shadow-pink200/45 border-2 border-[#F33C64] "
   />
   <div className="absolute rounded-full p-1.5 md:p-2.5 shadow-lg shadow-pink200/35 bg-black bg-opacity-50 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+  <motion.div  whileHover={{rotate:180, transition:{duration:1, ease:'easeInOut'}}} >
     <FaPlay className="text-white  p-2 w-10 h-10 md:w-12 md:h-12 shadow-2xl" />
+   </motion.div>
   </div>
       </div>
 

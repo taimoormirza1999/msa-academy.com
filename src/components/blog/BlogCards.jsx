@@ -4,9 +4,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import BlogCard from "../ui/BlogCard";
 import axios from "axios";
+import { motion } from 'framer-motion';
+
 const CustomNextArrow = ({ onClick }) => (
   <button
-    className="absolute right-5 shadow-pink200/40 top-1/2 -translate-y-1/2 z-10 g-black/55 border-[1.5px] border-pink200 text-pink200 p-3 rounded-full shadow-xl"
+    className="absolute -right-2 lg:right-2 shadow-pink200/40 top-1/2 lg:top-auto lg:-bottom-24 -translate-y-1/2 z-10 bg-black/25 lg:bg-black/45 border-[1.5px] border-pink200 text-pink200 p-4 lg:p-4 rounded-full shadow-xl"
     onClick={onClick}
   >
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
@@ -17,7 +19,7 @@ const CustomNextArrow = ({ onClick }) => (
 
 const CustomPrevArrow = ({ onClick }) => (
   <button
-    className="absolute left-5 shadow-pink200/40 top-1/2 -translate-y-1/2 z-10 bg-black/55 border-[1.5px] border-pink200 text-pink200 p-3 rounded-full shadow-xl"
+    className="absolute -left-2 lg:left-auto lg:right-20 shadow-pink200/40 top-1/2 lg:top-auto lg:-bottom-24 -translate-y-1/2 z-10 bg-black/25 lg:bg-black/45 border-[1.5px] border-pink200 text-pink200 p-4 lg:p-4 rounded-full shadow-xl"
     onClick={onClick}
   >
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
@@ -39,7 +41,7 @@ function MultipleItems() {
   }, []);
 
   const settings = {
-    dots: true,
+    // dots: true,
     nextArrow: <CustomNextArrow />,
     prevArrow: <CustomPrevArrow />,
     // infinite: true,
@@ -47,14 +49,11 @@ function MultipleItems() {
     slidesToScroll: 1,
     // autoplay: true,
     // speed: 5000,
-    appendDots: dots => (
-      <div
-     
-    
-      >
-        <ul  > {dots} </ul>
-      </div>
-    ),
+    // appendDots: dots => (
+    //   <div>
+    //     <ul  > {dots} </ul>
+    //   </div>
+    // ),
     // dotsClass: "slick-dots slick-thumb",
     cssEase: "linear",
     pauseOnHover: true,
@@ -87,13 +86,18 @@ function MultipleItems() {
   };
 
   return (
-    <div className="slider-container mt-8 mb-8 lg:mb-0 lg:mt-28">
-      <Slider {...settings}>
-        {blogData?.map((blogItem, key) => (
-          <BlogCard blogItem={blogItem} key={key} />
-        ))}
-      </Slider>
-    </div>
+    
+      blogData?(
+        <motion.div initial={{opacity:0,scale:0.9}}  whileInView={{ opacity: 1, scale:1 }} transition={{duration:0.8, delay:0.55}} className="slider-container mt-8 mb-8 lg:mb-0 lg:mt-32 w-[95%] lg:w-[85%] mx-auto ">
+        <Slider {...settings} className="rounded">
+          {blogData?.map((blogItem, key) => (
+            <BlogCard blogItem={blogItem} key={key} />
+          ))}
+        </Slider>
+      </motion.div>
+      ): null
+    
+    
   );
 }
 
