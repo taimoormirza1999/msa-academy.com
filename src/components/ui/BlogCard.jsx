@@ -7,11 +7,7 @@ export default function BlogCard({blogItem}) {
   const shadows = ['shadow-blue-500', 'shadow-pink-500', 'shadow-indigo-500'];
 
   return (
-    <motion.div  whileHover={{scale: 1.02, transition: {
-      duration: 0.4,
-      ease: "easeInOut",
-      // delay:2,
-    },}} className="relative text-white m-1 lg:m-2 h-[50vh] border-2 border-pink200 rounded-[3rem] z-20 overflow-hidden bg-amber-500" >
+    <motion.div  className="relative text-white m-1 lg:m-2 h-[50vh] border-2 border-pink200 rounded-[3rem] z-20 overflow-hidden bg-amber-500"  >
       {/* Image */}
       <Link to={`/blog/${blogItem._id}`} className="relative cursor-pointer w-full max-w-full bg-slate-500 ">
         <img
