@@ -40,7 +40,7 @@ const Banner = () => {
         src={BannerImage}
         alt="Banner"
         style={{ y: parallaxY }}
-        className="w-full mx-auto lg:w-97 h-[44vh] sm:h-[60vh] lg:h-[80vh] object-cover object-[25%_30%] rounded-lg scale-105"
+        className="w-full mx-auto lg:w-97 h-[47vh] sm:h-[60vh] lg:h-[80vh] object-cover object-[25%_30%] rounded-lg scale-105"
       />
 
       {/* Parallax Foreground Content */}

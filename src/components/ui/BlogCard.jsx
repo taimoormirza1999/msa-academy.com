@@ -11,7 +11,7 @@ export default function BlogCard({blogItem}) {
       duration: 0.4,
       ease: "easeInOut",
       // delay:2,
-    },}} className="relative text-white m-1 lg:m-2 h-[50vh]  border-2 border-pink200 rounded-[3rem]" >
+    },}} className="relative text-white m-1 lg:m-2 h-[50vh] border-2 border-pink200 rounded-[3rem]" >
       {/* Image */}
       <Link to={`/blog/${blogItem._id}`} className="relative cursor-pointer ">
         <img
@@ -21,9 +21,9 @@ export default function BlogCard({blogItem}) {
           className="w-full object-cover rounded-[3rem] h-[50vh]"
         /> 
         {/* Title & Read More Overlay */}
-        <div className="absolute bottom-0 left-0 w-full h-[50vh]  rounded-[3rem] p-4 bg-gradient-to-t from-black via-black/10 to-black/20 
+        <div className="bg-green-500/70 absolute bottom-0 max-w-full left-0 w-full h-[50vh] rounded-[3rem] p-4 bg-gradient-to-t from-black via-black/10 to-black/20 
        shadow-lg shadow-pink200/15 flex items-end ">
-          <div className="lg:mb-8 pl-2 lg:pl-0 mb-2 w-full  flex flex-col">
+          <div className="lg:mb-8 pl-2 lg:pl-0 mb-2 w-full max-w-full flex flex-col bg-indigo-500/50 ">
           <h3 className="text-lg lg:text-2xl font-bold text-white font-medium-fgm mb-2 lg:mb-4 w-full">
             {blogItem.title}
           </h3>
@@ -32,13 +32,13 @@ export default function BlogCard({blogItem}) {
          {blogItem.categories?.slice(0,3).map((category, index) => (
               <span
                 key={index}
-                className={`w-fulltext-white font-medium py-1 text-xs lg:text-sm px-4 rounded-full font-impact-regular bg-opacity-45 shadow-2xl ${colors[index % colors.length]} ${shadows[index % shadows.length]}`}
+                className={`w-auto text-white font-medium py-1 text-xs lg:text-sm px-4 rounded-full font-impact-regular bg-opacity-45 shadow-2xl ${colors[index % colors.length]} ${shadows[index % shadows.length]}`}
               >
                 {category}
               </span>
             ))}
          </div>
-          <a href={`/blog/${blogItem._id}`} className="w-1/3 text-center text-gray-50 lg:mt-2 inline-block border-[1.2px] shadow-lg shadow-pink200/35 border-pink200 px-4 p-1 rounded-full lg:text-sm text-xs">
+          <a href={`/blog/${blogItem._id}`} className="w-1/2 text-center text-gray-50 lg:mt-2 inline-block  border-[1.2px] shadow-lg shadow-pink200/35 border-pink200 px-4 p-1 rounded-full lg:text-sm text-sm">
             Read More
           </a>
           </div>
