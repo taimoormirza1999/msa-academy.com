@@ -314,6 +314,12 @@ nav.bg-black.fixed.top-0.left-0.right-0.z-50.shadow-lg.py-2\.5.md\:py-3{
 .blog_description h1 {
   display: none; 
 }
+@media screen and (min-width: 1921px) {
+.banner_img{
+  /* overflow: visible; */
+  object-fit: contain;
+}
+}
 @media screen and (max-width: 768px) {
   .blog_description h2 {
     font-size: 1.32rem;  

@@ -9,17 +9,17 @@ const YourPath = () => {
     initial={{opacity:0}} whileInView={{opacity:1,transition:{duration:1.5, ease: "easeInOut",}}} 
   
     // transition={{ type: "spring", }}
-      className="relative w-full h-auto bg-cover bg-center mt-16 md:-mt-10 lg:mt-16 mx-auto md:w-99 2xl:w-85 max-w-[1920px] "
+      className="relative w-full h-auto bg-cover bg-center mt-16 mb-10 md:mt-10 lg:mt-16 mx-auto md:w-99 2xl:w-85 max-w-[1920px] "
      
     >
-         <div className="relative w-full h-auto">
+         <div className="relative w-full h-auto lg:w-full lg:ml-1.5">
          <img 
       src={YourPathImage} 
       alt="Banner" 
-      className="w-full md:w-98 h-[55vh] sm:h-[60vh] md:h-[90vh] lg:h-full object-cover md:object-contain object-[60%_30%] -z-10  mx-auto "
+      className="w-full md:w-98 h-[40vh] sm:h-[60vh] md:h-[90vh] lg:h-full object-cover md:object-contain object-[60%_30%] -z-10  mx-auto "
     />
          </div>
-      <div className="bg-black/60 z-50 md:z-0 lg:bg-transparent rounded-xl shadow-xl shadow-pink200/30 lg:shadow-none lg:rounded-none mx-auto lg:absolute md:top-72 lg:top-10 2xl:top-20 lg:left-20 2xl:left-24 p-8 text-white w-95 lg:w-[51%] 2xl:w-30vw flex flex-col justify-center -mt-32 mb-28 md:-mt-104 lg:-mt-0 lg:mb-0">
+      <div className="bg-black/60 z-50 md:z-0 lg:bg-transparent rounded-xl shadow-xl shadow-pink200/30 lg:shadow-none lg:rounded-none mx-auto lg:absolute md:top-72 lg:top-10 2xl:top-20 lg:left-20 2xl:left-24 p-8 text-white w-95 lg:w-[51%] 2xl:w-30vw flex flex-col justify-center -mt-6 mb-28 md:-mt-104 lg:-mt-0 lg:mb-0">
        
         <BannerTextHeading
         heading="FIND YOUR PATH AND LEARN ONLINE"

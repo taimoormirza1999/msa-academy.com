@@ -4,10 +4,10 @@ import CommunityMapImage from '../assets/community_map.png'; // Replace with you
 const CommunityMap = () => {
   return (
     <div
-      className="relative mb-5 mt-5 lg:mb-0 lg:mt-0 w-95 h-auto bg-cover bg-center my-0 2xl:w-85 mx-auto max-w-[1920px]"
+      className="relative mb-10 mt-5 lg:mb-20 lg:mt-2 w-95 h-auto bg-cover bg-center my-0 2xl:w-85 mx-auto max-w-[1920px]"
      
     >
-         <div className="relative h-auto mx-auto w-full md:w-85 " >
+         <div className="relative h-auto mx-auto w-full md:w-80 " >
          <img 
       src={CommunityMapImage} 
       alt="Banner" 

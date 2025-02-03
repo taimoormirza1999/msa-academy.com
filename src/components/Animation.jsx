@@ -8,10 +8,10 @@ const Animation = () => {
   return (
     <motion.div  
   
-      className="relative w-full md:w-99 h-auto bg-cover bg-center -mt-10 md:mb-10 lg:mb-60 xl:mb-10 lg:-mt-36 xl:-mt-56 lg:w-full 2xl:w-85 mx-auto max-w-[1920px]"
+      className="relative w-full md:w-99 h-auto bg-cover bg-center  md:mb-10 lg:mb-60 xl:mb-20 mt-10 xl:mt-20 lg:w-full 2xl:w-85 mx-auto max-w-[1920px] "
      id='animation-course'
     >
-         <div className="relative h-auto w-99 md:w-97" >
+         <div className="relative h-auto w-99 md:w-98" >
          <img 
       src={AnimationImage} 
       alt="Banner" 
