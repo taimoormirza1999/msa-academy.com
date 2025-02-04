@@ -34,7 +34,7 @@ export default function BlogCard({blogItem}) {
               </span>
             ))}
          </div>
-          <a href={`/blog/${blogItem._id}`} className="w-1/2 text-center text-gray-50 lg:mt-2 inline-block  border-[1.2px] shadow-lg shadow-pink200/35 border-pink200 px-4 p-1 rounded-full lg:text-sm text-sm">
+          <a href={`/blog/${blogItem._id}`} className="w-1/2 text-center text-gray-50 lg:mt-2 inline-block  border-[1.2px] shadow-lg shadow-pink200/35 border-pink200 px-4 p-1 rounded-full lg:text-sm text-base">
             Read More
           </a>
           </div>
