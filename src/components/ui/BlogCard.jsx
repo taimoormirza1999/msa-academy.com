@@ -7,7 +7,7 @@ export default function BlogCard({blogItem}) {
   const shadows = ['shadow-blue-500', 'shadow-pink-500', 'shadow-indigo-500'];
 
   return (
-    <motion.div  className="relative text-white m-1 md:mx-2 lg:m-2  border-2 border-pink200 rounded-[3rem] z-20 overflow-hidden bg-amber-500"  >
+    <motion.div  className="relative text-white m-1 md:mx-2 lg:m-2  border-2 border-pink200 rounded-[3rem] z-20 overflow-hidden "  >
       {/* Image */}
       <Link to={`/blog/${blogItem._id}`} className="relative cursor-pointer w-full max-w-full  ">
         <img
@@ -17,7 +17,7 @@ export default function BlogCard({blogItem}) {
           className="w-full object-cover h-[50vh]"
         /> 
         {/* Title & Read More Overlay */}
-        <div className=" absolute bottom-0 max-w-full left-0 w-full h-[50vh] p-4 bg-gradient-to-t from-black via-black/15 to-black/20 
+        <div className=" absolute bottom-0 max-w-full left-0 w-full h-[50vh] lg:p-4 bg-gradient-to-t from-black via-black/15 to-black/20 
        shadow-lg shadow-pink200/15 flex items-end ">
           <div className="lg:mb-8 pl-2 lg:pl-0 mb-2 w-full max-w-full flex flex-col ">
           <h3 className="text-lg lg:text-2xl font-bold text-white font-medium-fgm mb-2 lg:mb-4 w-full">
