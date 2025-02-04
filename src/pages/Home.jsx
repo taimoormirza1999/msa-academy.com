@@ -167,7 +167,7 @@ const Home = () => {
             </ScrollAnimation>
           </Suspense>
           <LoaderWrapper>
-            {showForm && <SignupForm />}
+            {/* {showForm && <SignupForm />} */}
 
             <Footer />
           </LoaderWrapper>
